@@ -1,0 +1,4367 @@
+<?xml version="1.0"?>
+<repository version="1.2" xmlns="http://www.gtk.org/introspection/core/1.0" xmlns:c="http://www.gtk.org/introspection/c/1.0" xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+<include name="Gee" version="0.8"/>
+<include name="GObject" version="2.0"/>
+<include name="Json" version="1.0"/>
+<include name="Gio" version="2.0"/>
+<package name="libgherkin3-0.1"/>
+<c:include name="libgherkin3.h"/>
+<namespace name="Gherkin3" version="1.0" c:prefix="Gherkin">
+	<class name="AstFeature" c:type="GherkinAstFeature" glib:type-name="GherkinAstFeature" glib:get-type="gherkin_ast_feature_get_type" glib:type-struct="AstFeatureClass" parent="Gherkin.AstAbstractNode">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstFeaturePrivate" c:type="GherkinAstFeaturePrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_feature_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstFeature" c:type="GherkinAstFeature*"/>
+			</return-value>
+			<parameters>
+				<parameter name="tags" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+					</type>
+				</parameter>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="language" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="keyword" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="description" transfer-ownership="none" allow-none="1">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="background" transfer-ownership="none" allow-none="1">
+					<type name="Gherkin.AstBackground" c:type="GherkinAstBackground*"/>
+				</parameter>
+				<parameter name="scenarioDefinitions" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstScenarioDefinition" c:type="GherkinAstScenarioDefinition*"/>
+					</type>
+				</parameter>
+				<parameter name="comments" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstComment" c:type="GherkinAstComment*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="tags" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+			</type>
+		</property>
+		<method name="get_tags" c:identifier="gherkin_ast_feature_get_tags">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_tags" c:identifier="gherkin_ast_feature_set_tags">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="language" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_language" c:identifier="gherkin_ast_feature_get_language">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_language" c:identifier="gherkin_ast_feature_set_language">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="keyword" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_keyword" c:identifier="gherkin_ast_feature_get_keyword">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_keyword" c:identifier="gherkin_ast_feature_set_keyword">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="name" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_name" c:identifier="gherkin_ast_feature_get_name">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_name" c:identifier="gherkin_ast_feature_set_name">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="description" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_description" c:identifier="gherkin_ast_feature_get_description">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_description" c:identifier="gherkin_ast_feature_set_description">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="background" writable="1">
+			<type name="Gherkin.AstBackground" c:type="GherkinAstBackground*"/>
+		</property>
+		<method name="get_background" c:identifier="gherkin_ast_feature_get_background">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.AstBackground" c:type="GherkinAstBackground*"/>
+			</return-value>
+		</method>
+		<method name="set_background" c:identifier="gherkin_ast_feature_set_background">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.AstBackground" c:type="GherkinAstBackground*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="scenarioDefinitions" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstScenarioDefinition" c:type="GherkinAstScenarioDefinition*"/>
+			</type>
+		</property>
+		<method name="get_scenarioDefinitions" c:identifier="gherkin_ast_feature_get_scenarioDefinitions">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstScenarioDefinition" c:type="GherkinAstScenarioDefinition*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_scenarioDefinitions" c:identifier="gherkin_ast_feature_set_scenarioDefinitions">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstScenarioDefinition" c:type="GherkinAstScenarioDefinition*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="comments" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstComment" c:type="GherkinAstComment*"/>
+			</type>
+		</property>
+		<method name="get_comments" c:identifier="gherkin_ast_feature_get_comments">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstComment" c:type="GherkinAstComment*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_comments" c:identifier="gherkin_ast_feature_set_comments">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstComment" c:type="GherkinAstComment*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstFeatureClass" c:type="GherkinAstFeatureClass" glib:is-gtype-struct-for="Feature">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstFeaturePrivate" c:type="GherkinAstFeaturePrivate" disguised="1"/>
+	<class name="AstExamples" c:type="GherkinAstExamples" glib:type-name="GherkinAstExamples" glib:get-type="gherkin_ast_examples_get_type" glib:type-struct="AstExamplesClass" parent="Gherkin.AstAbstractNode">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstExamplesPrivate" c:type="GherkinAstExamplesPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_examples_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstExamples" c:type="GherkinAstExamples*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="tags" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+					</type>
+				</parameter>
+				<parameter name="keyword" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="description" transfer-ownership="none" allow-none="1">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="tableHeader" transfer-ownership="none">
+					<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+				</parameter>
+				<parameter name="tableBody" transfer-ownership="none" allow-none="1">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="tags" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+			</type>
+		</property>
+		<method name="get_tags" c:identifier="gherkin_ast_examples_get_tags">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_tags" c:identifier="gherkin_ast_examples_set_tags">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="keyword" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_keyword" c:identifier="gherkin_ast_examples_get_keyword">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_keyword" c:identifier="gherkin_ast_examples_set_keyword">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="name" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_name" c:identifier="gherkin_ast_examples_get_name">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_name" c:identifier="gherkin_ast_examples_set_name">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="description" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_description" c:identifier="gherkin_ast_examples_get_description">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_description" c:identifier="gherkin_ast_examples_set_description">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="tableHeader" writable="1">
+			<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+		</property>
+		<method name="get_tableHeader" c:identifier="gherkin_ast_examples_get_tableHeader">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+			</return-value>
+		</method>
+		<method name="set_tableHeader" c:identifier="gherkin_ast_examples_set_tableHeader">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="tableBody" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+			</type>
+		</property>
+		<method name="get_tableBody" c:identifier="gherkin_ast_examples_get_tableBody">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_tableBody" c:identifier="gherkin_ast_examples_set_tableBody">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstExamplesClass" c:type="GherkinAstExamplesClass" glib:is-gtype-struct-for="Examples">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstExamplesPrivate" c:type="GherkinAstExamplesPrivate" disguised="1"/>
+	<class name="AstTableCell" c:type="GherkinAstTableCell" glib:type-name="GherkinAstTableCell" glib:get-type="gherkin_ast_table_cell_get_type" glib:type-struct="AstTableCellClass" parent="Gherkin.AstAbstractNode">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstTableCellPrivate" c:type="GherkinAstTableCellPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_table_cell_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstTableCell" c:type="GherkinAstTableCell*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="value" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_value" c:identifier="gherkin_ast_table_cell_get_value">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_value" c:identifier="gherkin_ast_table_cell_set_value">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstTableCellClass" c:type="GherkinAstTableCellClass" glib:is-gtype-struct-for="TableCell">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstTableCellPrivate" c:type="GherkinAstTableCellPrivate" disguised="1"/>
+	<class name="AstAbstractNode" c:type="GherkinAstAbstractNode" glib:type-name="GherkinAstAbstractNode" glib:get-type="gherkin_ast_abstract_node_get_type" glib:type-struct="AstAbstractNodeClass" parent="GObject.Object" abstract="1">
+		<implements name="Json.Serializable"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="AstAbstractNodePrivate" c:type="GherkinAstAbstractNodePrivate*"/>
+		</field>
+		<method name="to_string" c:identifier="gherkin_ast_abstract_node_to_string">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+		</method>
+		<method name="serialize_property" c:identifier="gherkin_ast_abstract_node_serialize_property">
+			<return-value transfer-ownership="full">
+				<type name="Json.Node" c:type="JsonNode*"/>
+			</return-value>
+			<parameters>
+				<parameter name="property_name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="value" transfer-ownership="none">
+					<type name="GObject.Value" c:type="GValue"/>
+				</parameter>
+				<parameter name="pspec" transfer-ownership="none">
+					<type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="serialize_property" invoker="serialize_property">
+			<return-value transfer-ownership="full">
+				<type name="Json.Node" c:type="JsonNode*"/>
+			</return-value>
+			<parameters>
+				<parameter name="property_name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="value" transfer-ownership="none">
+					<type name="GObject.Value" c:type="GValue"/>
+				</parameter>
+				<parameter name="pspec" transfer-ownership="none">
+					<type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="deserialize_property" c:identifier="gherkin_ast_abstract_node_deserialize_property">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="property_name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="value" direction="out" transfer-ownership="full">
+					<type name="GObject.Value" c:type="GValue*"/>
+				</parameter>
+				<parameter name="pspec" transfer-ownership="none">
+					<type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+				</parameter>
+				<parameter name="property_node" transfer-ownership="none">
+					<type name="Json.Node" c:type="JsonNode*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="deserialize_property" invoker="deserialize_property">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="property_name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="value" direction="out" transfer-ownership="full">
+					<type name="GObject.Value" c:type="GValue*"/>
+				</parameter>
+				<parameter name="pspec" transfer-ownership="none">
+					<type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+				</parameter>
+				<parameter name="property_node" transfer-ownership="none">
+					<type name="Json.Node" c:type="JsonNode*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<property name="node-type" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_node_type" c:identifier="gherkin_ast_abstract_node_get_node_type">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_node_type" c:identifier="gherkin_ast_abstract_node_set_node_type">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="location" writable="1">
+			<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+		</property>
+		<method name="get_location" c:identifier="gherkin_ast_abstract_node_get_location">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+			</return-value>
+		</method>
+		<method name="set_location" c:identifier="gherkin_ast_abstract_node_set_location">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass" glib:is-gtype-struct-for="AbstractNode">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+				<field name="serialize_property">
+			<callback name="serialize_property" c:type="serialize_property">
+				<return-value transfer-ownership="full">
+					<type name="Json.Node" c:type="JsonNode*"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode*"/>
+					</parameter>
+					<parameter name="property_name" transfer-ownership="none">
+						<type name="utf8" c:type="const gchar*"/>
+					</parameter>
+					<parameter name="value" transfer-ownership="none">
+						<type name="GObject.Value" c:type="GValue"/>
+					</parameter>
+					<parameter name="pspec" transfer-ownership="none">
+						<type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+				<field name="deserialize_property">
+			<callback name="deserialize_property" c:type="deserialize_property">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode*"/>
+					</parameter>
+					<parameter name="property_name" transfer-ownership="none">
+						<type name="utf8" c:type="const gchar*"/>
+					</parameter>
+					<parameter name="value" direction="out" transfer-ownership="full">
+						<type name="GObject.Value" c:type="GValue*"/>
+					</parameter>
+					<parameter name="pspec" transfer-ownership="none">
+						<type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+					</parameter>
+					<parameter name="property_node" transfer-ownership="none">
+						<type name="Json.Node" c:type="JsonNode*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+	</record>
+	<record name="AstAbstractNodePrivate" c:type="GherkinAstAbstractNodePrivate" disguised="1"/>
+	<class name="AstComment" c:type="GherkinAstComment" glib:type-name="GherkinAstComment" glib:get-type="gherkin_ast_comment_get_type" glib:type-struct="AstCommentClass" parent="Gherkin.AstAbstractNode">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstCommentPrivate" c:type="GherkinAstCommentPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_comment_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstComment" c:type="GherkinAstComment*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="text" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+	</class>
+	<record name="AstCommentClass" c:type="GherkinAstCommentClass" glib:is-gtype-struct-for="Comment">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstCommentPrivate" c:type="GherkinAstCommentPrivate" disguised="1"/>
+	<class name="AstBackground" c:type="GherkinAstBackground" glib:type-name="GherkinAstBackground" glib:get-type="gherkin_ast_background_get_type" glib:type-struct="AstBackgroundClass" parent="Gherkin.AstAbstractNode">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstBackgroundPrivate" c:type="GherkinAstBackgroundPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_background_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstBackground" c:type="GherkinAstBackground*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="keyword" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="description" transfer-ownership="none" allow-none="1">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="steps" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstStep" c:type="GherkinAstStep*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="keyword" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_keyword" c:identifier="gherkin_ast_background_get_keyword">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_keyword" c:identifier="gherkin_ast_background_set_keyword">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="name" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_name" c:identifier="gherkin_ast_background_get_name">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_name" c:identifier="gherkin_ast_background_set_name">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="description" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_description" c:identifier="gherkin_ast_background_get_description">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_description" c:identifier="gherkin_ast_background_set_description">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="steps" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstStep" c:type="GherkinAstStep*"/>
+			</type>
+		</property>
+		<method name="get_steps" c:identifier="gherkin_ast_background_get_steps">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstStep" c:type="GherkinAstStep*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_steps" c:identifier="gherkin_ast_background_set_steps">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstStep" c:type="GherkinAstStep*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstBackgroundClass" c:type="GherkinAstBackgroundClass" glib:is-gtype-struct-for="Background">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstBackgroundPrivate" c:type="GherkinAstBackgroundPrivate" disguised="1"/>
+	<class name="AstScenario" c:type="GherkinAstScenario" glib:type-name="GherkinAstScenario" glib:get-type="gherkin_ast_scenario_get_type" glib:type-struct="AstScenarioClass" parent="Gherkin.AstScenarioDefinition">
+		<field name="parent_instance">
+			<type name="Gherkin.AstScenarioDefinition" c:type="GherkinAstScenarioDefinition"/>
+		</field>
+		<field name="priv">
+			<type name="AstScenarioPrivate" c:type="GherkinAstScenarioPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_scenario_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstScenario" c:type="GherkinAstScenario*"/>
+			</return-value>
+			<parameters>
+				<parameter name="tags" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+					</type>
+				</parameter>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="keyword" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="description" transfer-ownership="none" allow-none="1">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="steps" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstStep" c:type="GherkinAstStep*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+	</class>
+	<record name="AstScenarioClass" c:type="GherkinAstScenarioClass" glib:is-gtype-struct-for="Scenario">
+		<field name="parent_class">
+			<type name="Gherkin.AstScenarioDefinitionClass" c:type="GherkinAstScenarioDefinitionClass"/>
+		</field>
+	</record>
+	<record name="AstScenarioPrivate" c:type="GherkinAstScenarioPrivate" disguised="1"/>
+	<class name="AstScenarioDefinition" c:type="GherkinAstScenarioDefinition" glib:type-name="GherkinAstScenarioDefinition" glib:get-type="gherkin_ast_scenario_definition_get_type" glib:type-struct="AstScenarioDefinitionClass" parent="Gherkin.AstAbstractNode" abstract="1">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstScenarioDefinitionPrivate" c:type="GherkinAstScenarioDefinitionPrivate*"/>
+		</field>
+		<property name="tags" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+			</type>
+		</property>
+		<method name="get_tags" c:identifier="gherkin_ast_scenario_definition_get_tags">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_tags" c:identifier="gherkin_ast_scenario_definition_set_tags">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="keyword" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_keyword" c:identifier="gherkin_ast_scenario_definition_get_keyword">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_keyword" c:identifier="gherkin_ast_scenario_definition_set_keyword">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="name" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_name" c:identifier="gherkin_ast_scenario_definition_get_name">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_name" c:identifier="gherkin_ast_scenario_definition_set_name">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="description" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_description" c:identifier="gherkin_ast_scenario_definition_get_description">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_description" c:identifier="gherkin_ast_scenario_definition_set_description">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="steps" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstStep" c:type="GherkinAstStep*"/>
+			</type>
+		</property>
+		<method name="get_steps" c:identifier="gherkin_ast_scenario_definition_get_steps">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstStep" c:type="GherkinAstStep*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_steps" c:identifier="gherkin_ast_scenario_definition_set_steps">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstStep" c:type="GherkinAstStep*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstScenarioDefinitionClass" c:type="GherkinAstScenarioDefinitionClass" glib:is-gtype-struct-for="ScenarioDefinition">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstScenarioDefinitionPrivate" c:type="GherkinAstScenarioDefinitionPrivate" disguised="1"/>
+	<class name="AstStep" c:type="GherkinAstStep" glib:type-name="GherkinAstStep" glib:get-type="gherkin_ast_step_get_type" glib:type-struct="AstStepClass" parent="Gherkin.AstAbstractNode">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstStepPrivate" c:type="GherkinAstStepPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_step_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstStep" c:type="GherkinAstStep*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="keyword" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="text" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="argument" transfer-ownership="none" allow-none="1">
+					<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="keyword" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_keyword" c:identifier="gherkin_ast_step_get_keyword">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_keyword" c:identifier="gherkin_ast_step_set_keyword">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="text" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_text" c:identifier="gherkin_ast_step_get_text">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_text" c:identifier="gherkin_ast_step_set_text">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="argument" writable="1">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode*"/>
+		</property>
+		<method name="get_argument" c:identifier="gherkin_ast_step_get_argument">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode*"/>
+			</return-value>
+		</method>
+		<method name="set_argument" c:identifier="gherkin_ast_step_set_argument">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode*"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstStepClass" c:type="GherkinAstStepClass" glib:is-gtype-struct-for="Step">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstStepPrivate" c:type="GherkinAstStepPrivate" disguised="1"/>
+	<class name="AstLocation" c:type="GherkinAstLocation" glib:type-name="GherkinAstLocation" glib:get-type="gherkin_ast_location_get_type" glib:type-struct="AstLocationClass" parent="GObject.Object">
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="AstLocationPrivate" c:type="GherkinAstLocationPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_location_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+			</return-value>
+			<parameters>
+				<parameter name="line" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+				<parameter name="column" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="line" writable="1">
+			<type name="gint" c:type="gint"/>
+		</property>
+		<method name="get_line" c:identifier="gherkin_ast_location_get_line">
+			<return-value transfer-ownership="none">
+				<type name="gint" c:type="gint"/>
+			</return-value>
+		</method>
+		<method name="set_line" c:identifier="gherkin_ast_location_set_line">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="column" writable="1">
+			<type name="gint" c:type="gint"/>
+		</property>
+		<method name="get_column" c:identifier="gherkin_ast_location_get_column">
+			<return-value transfer-ownership="none">
+				<type name="gint" c:type="gint"/>
+			</return-value>
+		</method>
+		<method name="set_column" c:identifier="gherkin_ast_location_set_column">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstLocationClass" c:type="GherkinAstLocationClass" glib:is-gtype-struct-for="Location">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="AstLocationPrivate" c:type="GherkinAstLocationPrivate" disguised="1"/>
+	<class name="AstScenarioOutline" c:type="GherkinAstScenarioOutline" glib:type-name="GherkinAstScenarioOutline" glib:get-type="gherkin_ast_scenario_outline_get_type" glib:type-struct="AstScenarioOutlineClass" parent="Gherkin.AstScenarioDefinition">
+		<field name="parent_instance">
+			<type name="Gherkin.AstScenarioDefinition" c:type="GherkinAstScenarioDefinition"/>
+		</field>
+		<field name="priv">
+			<type name="AstScenarioOutlinePrivate" c:type="GherkinAstScenarioOutlinePrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_scenario_outline_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstScenarioOutline" c:type="GherkinAstScenarioOutline*"/>
+			</return-value>
+			<parameters>
+				<parameter name="tags" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+					</type>
+				</parameter>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="keyword" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="description" transfer-ownership="none" allow-none="1">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="steps" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstStep" c:type="GherkinAstStep*"/>
+					</type>
+				</parameter>
+				<parameter name="examples" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstExamples" c:type="GherkinAstExamples*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="examples" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstExamples" c:type="GherkinAstExamples*"/>
+			</type>
+		</property>
+		<method name="get_examples" c:identifier="gherkin_ast_scenario_outline_get_examples">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstExamples" c:type="GherkinAstExamples*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_examples" c:identifier="gherkin_ast_scenario_outline_set_examples">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstExamples" c:type="GherkinAstExamples*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstScenarioOutlineClass" c:type="GherkinAstScenarioOutlineClass" glib:is-gtype-struct-for="ScenarioOutline">
+		<field name="parent_class">
+			<type name="Gherkin.AstScenarioDefinitionClass" c:type="GherkinAstScenarioDefinitionClass"/>
+		</field>
+	</record>
+	<record name="AstScenarioOutlinePrivate" c:type="GherkinAstScenarioOutlinePrivate" disguised="1"/>
+	<class name="AstTag" c:type="GherkinAstTag" glib:type-name="GherkinAstTag" glib:get-type="gherkin_ast_tag_get_type" glib:type-struct="AstTagClass" parent="Gherkin.AstAbstractNode">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstTagPrivate" c:type="GherkinAstTagPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_tag_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstTag" c:type="GherkinAstTag*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="name" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_name" c:identifier="gherkin_ast_tag_get_name">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_name" c:identifier="gherkin_ast_tag_set_name">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstTagClass" c:type="GherkinAstTagClass" glib:is-gtype-struct-for="Tag">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstTagPrivate" c:type="GherkinAstTagPrivate" disguised="1"/>
+	<class name="AstTableRow" c:type="GherkinAstTableRow" glib:type-name="GherkinAstTableRow" glib:get-type="gherkin_ast_table_row_get_type" glib:type-struct="AstTableRowClass" parent="Gherkin.AstAbstractNode">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstTableRowPrivate" c:type="GherkinAstTableRowPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_table_row_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="cells" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTableCell" c:type="GherkinAstTableCell*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="cells" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstTableCell" c:type="GherkinAstTableCell*"/>
+			</type>
+		</property>
+		<method name="get_cells" c:identifier="gherkin_ast_table_row_get_cells">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstTableCell" c:type="GherkinAstTableCell*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_cells" c:identifier="gherkin_ast_table_row_set_cells">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTableCell" c:type="GherkinAstTableCell*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstTableRowClass" c:type="GherkinAstTableRowClass" glib:is-gtype-struct-for="TableRow">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstTableRowPrivate" c:type="GherkinAstTableRowPrivate" disguised="1"/>
+	<class name="AstDocString" c:type="GherkinAstDocString" glib:type-name="GherkinAstDocString" glib:get-type="gherkin_ast_doc_string_get_type" glib:type-struct="AstDocStringClass" parent="Gherkin.AstAbstractNode">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstDocStringPrivate" c:type="GherkinAstDocStringPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_doc_string_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstDocString" c:type="GherkinAstDocString*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+				<parameter name="contentType" transfer-ownership="none" allow-none="1">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="content" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="contentType" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_contentType" c:identifier="gherkin_ast_doc_string_get_contentType">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_contentType" c:identifier="gherkin_ast_doc_string_set_contentType">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="content" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_content" c:identifier="gherkin_ast_doc_string_get_content">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_content" c:identifier="gherkin_ast_doc_string_set_content">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstDocStringClass" c:type="GherkinAstDocStringClass" glib:is-gtype-struct-for="DocString">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstDocStringPrivate" c:type="GherkinAstDocStringPrivate" disguised="1"/>
+	<class name="AstDataTable" c:type="GherkinAstDataTable" glib:type-name="GherkinAstDataTable" glib:get-type="gherkin_ast_data_table_get_type" glib:type-struct="AstDataTableClass" parent="Gherkin.AstAbstractNode">
+		<field name="parent_instance">
+			<type name="Gherkin.AstAbstractNode" c:type="GherkinAstAbstractNode"/>
+		</field>
+		<field name="priv">
+			<type name="AstDataTablePrivate" c:type="GherkinAstDataTablePrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_data_table_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstDataTable" c:type="GherkinAstDataTable*"/>
+			</return-value>
+			<parameters>
+				<parameter name="rows" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="rows" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+			</type>
+		</property>
+		<method name="get_rows" c:identifier="gherkin_ast_data_table_get_rows">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_rows" c:identifier="gherkin_ast_data_table_set_rows">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.AstTableRow" c:type="GherkinAstTableRow*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstDataTableClass" c:type="GherkinAstDataTableClass" glib:is-gtype-struct-for="DataTable">
+		<field name="parent_class">
+			<type name="Gherkin.AstAbstractNodeClass" c:type="GherkinAstAbstractNodeClass"/>
+		</field>
+	</record>
+	<record name="AstDataTablePrivate" c:type="GherkinAstDataTablePrivate" disguised="1"/>
+	<record name="PicklesCompiler">
+		<method name="compile" c:identifier="gherkin_pickles_compiler_compile">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.PicklesPickle" c:type="GherkinPicklesPickle*"/>
+				</type>
+			</return-value>
+			<parameters>
+				<parameter name="feature" transfer-ownership="none">
+					<type name="Gherkin.AstFeature" c:type="GherkinAstFeature*"/>
+				</parameter>
+				<parameter name="path" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<constructor name="new" c:identifier="gherkin_pickles_compiler_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.PicklesCompiler" c:type="GherkinPicklesCompiler*"/>
+			</return-value>
+		</constructor>
+	</record>
+	<class name="PicklesPickleTable" c:type="GherkinPicklesPickleTable" glib:type-name="GherkinPicklesPickleTable" glib:get-type="gherkin_pickles_pickle_table_get_type" glib:type-struct="PicklesPickleTableClass" parent="GObject.Object">
+		<implements name="Gherkin.PicklesArgument"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="PicklesPickleTablePrivate" c:type="GherkinPicklesPickleTablePrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_pickles_pickle_table_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.PicklesPickleTable" c:type="GherkinPicklesPickleTable*"/>
+			</return-value>
+			<parameters>
+				<parameter name="rows" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleRow" c:type="GherkinPicklesPickleRow*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="rows" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.PicklesPickleRow" c:type="GherkinPicklesPickleRow*"/>
+			</type>
+		</property>
+		<method name="get_rows" c:identifier="gherkin_pickles_pickle_table_get_rows">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.PicklesPickleRow" c:type="GherkinPicklesPickleRow*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_rows" c:identifier="gherkin_pickles_pickle_table_set_rows">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleRow" c:type="GherkinPicklesPickleRow*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="PicklesPickleTableClass" c:type="GherkinPicklesPickleTableClass" glib:is-gtype-struct-for="PickleTable">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="PicklesPickleTablePrivate" c:type="GherkinPicklesPickleTablePrivate" disguised="1"/>
+	<class name="PicklesPickleTag" c:type="GherkinPicklesPickleTag" glib:type-name="GherkinPicklesPickleTag" glib:get-type="gherkin_pickles_pickle_tag_get_type" glib:type-struct="PicklesPickleTagClass" parent="GObject.Object">
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="PicklesPickleTagPrivate" c:type="GherkinPicklesPickleTagPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_pickles_pickle_tag_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.PicklesPickleTag" c:type="GherkinPicklesPickleTag*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+				</parameter>
+				<parameter name="name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+	</class>
+	<record name="PicklesPickleTagClass" c:type="GherkinPicklesPickleTagClass" glib:is-gtype-struct-for="PickleTag">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="PicklesPickleTagPrivate" c:type="GherkinPicklesPickleTagPrivate" disguised="1"/>
+	<class name="PicklesPickleRow" c:type="GherkinPicklesPickleRow" glib:type-name="GherkinPicklesPickleRow" glib:get-type="gherkin_pickles_pickle_row_get_type" glib:type-struct="PicklesPickleRowClass" parent="GObject.Object">
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="PicklesPickleRowPrivate" c:type="GherkinPicklesPickleRowPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_pickles_pickle_row_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.PicklesPickleRow" c:type="GherkinPicklesPickleRow*"/>
+			</return-value>
+			<parameters>
+				<parameter name="cells" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleCell" c:type="GherkinPicklesPickleCell*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="cells" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.PicklesPickleCell" c:type="GherkinPicklesPickleCell*"/>
+			</type>
+		</property>
+		<method name="get_cells" c:identifier="gherkin_pickles_pickle_row_get_cells">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.PicklesPickleCell" c:type="GherkinPicklesPickleCell*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_cells" c:identifier="gherkin_pickles_pickle_row_set_cells">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleCell" c:type="GherkinPicklesPickleCell*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="PicklesPickleRowClass" c:type="GherkinPicklesPickleRowClass" glib:is-gtype-struct-for="PickleRow">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="PicklesPickleRowPrivate" c:type="GherkinPicklesPickleRowPrivate" disguised="1"/>
+	<class name="PicklesPickleCell" c:type="GherkinPicklesPickleCell" glib:type-name="GherkinPicklesPickleCell" glib:get-type="gherkin_pickles_pickle_cell_get_type" glib:type-struct="PicklesPickleCellClass" parent="GObject.Object">
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="PicklesPickleCellPrivate" c:type="GherkinPicklesPickleCellPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_pickles_pickle_cell_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.PicklesPickleCell" c:type="GherkinPicklesPickleCell*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+				</parameter>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="location" writable="1">
+			<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+		</property>
+		<method name="get_location" c:identifier="gherkin_pickles_pickle_cell_get_location">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+			</return-value>
+		</method>
+		<method name="set_location" c:identifier="gherkin_pickles_pickle_cell_set_location">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="value" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_value" c:identifier="gherkin_pickles_pickle_cell_get_value">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_value" c:identifier="gherkin_pickles_pickle_cell_set_value">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="PicklesPickleCellClass" c:type="GherkinPicklesPickleCellClass" glib:is-gtype-struct-for="PickleCell">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="PicklesPickleCellPrivate" c:type="GherkinPicklesPickleCellPrivate" disguised="1"/>
+	<class name="PicklesPickleLocation" c:type="GherkinPicklesPickleLocation" glib:type-name="GherkinPicklesPickleLocation" glib:get-type="gherkin_pickles_pickle_location_get_type" glib:type-struct="PicklesPickleLocationClass" parent="GObject.Object">
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="PicklesPickleLocationPrivate" c:type="GherkinPicklesPickleLocationPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_pickles_pickle_location_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+			</return-value>
+			<parameters>
+				<parameter name="path" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="line" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+				<parameter name="column" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="path" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_path" c:identifier="gherkin_pickles_pickle_location_get_path">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_path" c:identifier="gherkin_pickles_pickle_location_set_path">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="line" writable="1">
+			<type name="gint" c:type="gint"/>
+		</property>
+		<method name="get_line" c:identifier="gherkin_pickles_pickle_location_get_line">
+			<return-value transfer-ownership="none">
+				<type name="gint" c:type="gint"/>
+			</return-value>
+		</method>
+		<method name="set_line" c:identifier="gherkin_pickles_pickle_location_set_line">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="column" writable="1">
+			<type name="gint" c:type="gint"/>
+		</property>
+		<method name="get_column" c:identifier="gherkin_pickles_pickle_location_get_column">
+			<return-value transfer-ownership="none">
+				<type name="gint" c:type="gint"/>
+			</return-value>
+		</method>
+		<method name="set_column" c:identifier="gherkin_pickles_pickle_location_set_column">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="PicklesPickleLocationClass" c:type="GherkinPicklesPickleLocationClass" glib:is-gtype-struct-for="PickleLocation">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="PicklesPickleLocationPrivate" c:type="GherkinPicklesPickleLocationPrivate" disguised="1"/>
+	<class name="PicklesPickleString" c:type="GherkinPicklesPickleString" glib:type-name="GherkinPicklesPickleString" glib:get-type="gherkin_pickles_pickle_string_get_type" glib:type-struct="PicklesPickleStringClass" parent="GObject.Object">
+		<implements name="Gherkin.PicklesArgument"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="PicklesPickleStringPrivate" c:type="GherkinPicklesPickleStringPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_pickles_pickle_string_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.PicklesPickleString" c:type="GherkinPicklesPickleString*"/>
+			</return-value>
+			<parameters>
+				<parameter name="location" transfer-ownership="none">
+					<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+				</parameter>
+				<parameter name="content" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="content" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_content" c:identifier="gherkin_pickles_pickle_string_get_content">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_content" c:identifier="gherkin_pickles_pickle_string_set_content">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="PicklesPickleStringClass" c:type="GherkinPicklesPickleStringClass" glib:is-gtype-struct-for="PickleString">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="PicklesPickleStringPrivate" c:type="GherkinPicklesPickleStringPrivate" disguised="1"/>
+	<class name="PicklesPickle" c:type="GherkinPicklesPickle" glib:type-name="GherkinPicklesPickle" glib:get-type="gherkin_pickles_pickle_get_type" glib:type-struct="PicklesPickleClass" parent="GObject.Object">
+		<implements name="Json.Serializable"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="PicklesPicklePrivate" c:type="GherkinPicklesPicklePrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_pickles_pickle_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.PicklesPickle" c:type="GherkinPicklesPickle*"/>
+			</return-value>
+			<parameters>
+				<parameter name="name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="steps" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleStep" c:type="GherkinPicklesPickleStep*"/>
+					</type>
+				</parameter>
+				<parameter name="tags" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleTag" c:type="GherkinPicklesPickleTag*"/>
+					</type>
+				</parameter>
+				<parameter name="locations" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<method name="deserialize_property" c:identifier="gherkin_pickles_pickle_deserialize_property">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="property_name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="value" direction="out" transfer-ownership="full">
+					<type name="GObject.Value" c:type="GValue*"/>
+				</parameter>
+				<parameter name="pspec" transfer-ownership="none">
+					<type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+				</parameter>
+				<parameter name="property_node" transfer-ownership="none">
+					<type name="Json.Node" c:type="JsonNode*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="deserialize_property" invoker="deserialize_property">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="property_name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="value" direction="out" transfer-ownership="full">
+					<type name="GObject.Value" c:type="GValue*"/>
+				</parameter>
+				<parameter name="pspec" transfer-ownership="none">
+					<type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+				</parameter>
+				<parameter name="property_node" transfer-ownership="none">
+					<type name="Json.Node" c:type="JsonNode*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<property name="name" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_name" c:identifier="gherkin_pickles_pickle_get_name">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_name" c:identifier="gherkin_pickles_pickle_set_name">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="steps" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.PicklesPickleStep" c:type="GherkinPicklesPickleStep*"/>
+			</type>
+		</property>
+		<method name="get_steps" c:identifier="gherkin_pickles_pickle_get_steps">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.PicklesPickleStep" c:type="GherkinPicklesPickleStep*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_steps" c:identifier="gherkin_pickles_pickle_set_steps">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleStep" c:type="GherkinPicklesPickleStep*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="tags" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.PicklesPickleTag" c:type="GherkinPicklesPickleTag*"/>
+			</type>
+		</property>
+		<method name="get_tags" c:identifier="gherkin_pickles_pickle_get_tags">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.PicklesPickleTag" c:type="GherkinPicklesPickleTag*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_tags" c:identifier="gherkin_pickles_pickle_set_tags">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleTag" c:type="GherkinPicklesPickleTag*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="locations" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+			</type>
+		</property>
+		<method name="get_locations" c:identifier="gherkin_pickles_pickle_get_locations">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_locations" c:identifier="gherkin_pickles_pickle_set_locations">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="PicklesPickleClass" c:type="GherkinPicklesPickleClass" glib:is-gtype-struct-for="Pickle">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+				<field name="deserialize_property">
+			<callback name="deserialize_property" c:type="deserialize_property">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.PicklesPickle" c:type="GherkinPicklesPickle*"/>
+					</parameter>
+					<parameter name="property_name" transfer-ownership="none">
+						<type name="utf8" c:type="const gchar*"/>
+					</parameter>
+					<parameter name="value" direction="out" transfer-ownership="full">
+						<type name="GObject.Value" c:type="GValue*"/>
+					</parameter>
+					<parameter name="pspec" transfer-ownership="none">
+						<type name="GObject.ParamSpec" c:type="GParamSpec*"/>
+					</parameter>
+					<parameter name="property_node" transfer-ownership="none">
+						<type name="Json.Node" c:type="JsonNode*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+	</record>
+	<record name="PicklesPicklePrivate" c:type="GherkinPicklesPicklePrivate" disguised="1"/>
+	<class name="PicklesPickleStep" c:type="GherkinPicklesPickleStep" glib:type-name="GherkinPicklesPickleStep" glib:get-type="gherkin_pickles_pickle_step_get_type" glib:type-struct="PicklesPickleStepClass" parent="GObject.Object">
+		<implements name="Json.Serializable"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="PicklesPickleStepPrivate" c:type="GherkinPicklesPickleStepPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_pickles_pickle_step_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.PicklesPickleStep" c:type="GherkinPicklesPickleStep*"/>
+			</return-value>
+			<parameters>
+				<parameter name="text" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="arguments" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesArgument" c:type="GherkinPicklesArgument*"/>
+					</type>
+				</parameter>
+				<parameter name="locations" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<property name="text" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_text" c:identifier="gherkin_pickles_pickle_step_get_text">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_text" c:identifier="gherkin_pickles_pickle_step_set_text">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="arguments" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.PicklesArgument" c:type="GherkinPicklesArgument*"/>
+			</type>
+		</property>
+		<method name="get_arguments" c:identifier="gherkin_pickles_pickle_step_get_arguments">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.PicklesArgument" c:type="GherkinPicklesArgument*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_arguments" c:identifier="gherkin_pickles_pickle_step_set_arguments">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesArgument" c:type="GherkinPicklesArgument*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="locations" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+			</type>
+		</property>
+		<method name="get_locations" c:identifier="gherkin_pickles_pickle_step_get_locations">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_locations" c:identifier="gherkin_pickles_pickle_step_set_locations">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="PicklesPickleStepClass" c:type="GherkinPicklesPickleStepClass" glib:is-gtype-struct-for="PickleStep">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="PicklesPickleStepPrivate" c:type="GherkinPicklesPickleStepPrivate" disguised="1"/>
+	<interface name="PicklesArgument" c:type="GherkinPicklesArgument" glib:type-name="GherkinPicklesArgument" glib:get-type="gherkin_pickles_argument_get_type" glib:type-struct="ArgumentIface">
+		<prerequisite name="GObject.Object"/>
+		<property name="location" writable="1">
+			<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+		</property>
+		<method name="get_location" c:identifier="gherkin_pickles_argument_get_location">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+			</return-value>
+		</method>
+		<virtual-method name="get_location" invoker="get_location">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+			</return-value>
+		</virtual-method>
+		<method name="set_location" c:identifier="gherkin_pickles_argument_set_location">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="set_location" invoker="set_location">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+	</interface>
+	<record name="ArgumentIface" c:type="GherkinPicklesArgumentIface" glib:is-gtype-struct-for="Argument">
+		<field name="parent_iface">
+			<type name="GObject.TypeInterface" c:type="GTypeInterface"/>
+		</field>
+		<field name="get_location">
+			<callback name="get_location" c:type="get_location">
+				<return-value transfer-ownership="none">
+					<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.PicklesArgument" c:type="GherkinPicklesArgument*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="set_location">
+			<callback name="set_location" c:type="set_location">
+				<return-value transfer-ownership="none">
+					<type name="none"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.PicklesArgument" c:type="GherkinPicklesArgument*"/>
+					</parameter>
+					<parameter name="value" transfer-ownership="none">
+						<type name="Gherkin.PicklesPickleLocation" c:type="GherkinPicklesPickleLocation*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+	</record>
+	<enumeration name="ParserException" c:type="GherkinParserException" glib:error-domain="gherkin_parser_exception-quark">
+		<member name="ast_builder" c:identifier="GHERKIN_PARSER_EXCEPTION_AST_BUILDER" value="0"/>
+		<member name="no_such_language" c:identifier="GHERKIN_PARSER_EXCEPTION_NO_SUCH_LANGUAGE" value="1"/>
+		<member name="unexpected_token" c:identifier="GHERKIN_PARSER_EXCEPTION_UNEXPECTED_TOKEN" value="2"/>
+		<member name="unexpected_eof" c:identifier="GHERKIN_PARSER_EXCEPTION_UNEXPECTED_EOF" value="3"/>
+		<member name="composite_parser" c:identifier="GHERKIN_PARSER_EXCEPTION_COMPOSITE_PARSER" value="4"/>
+	</enumeration>
+	<enumeration name="RuntimeException" c:type="GherkinRuntimeException" glib:error-domain="gherkin_runtime_exception-quark">
+		<member name="internal_error" c:identifier="GHERKIN_RUNTIME_EXCEPTION_INTERNAL_ERROR" value="0"/>
+		<member name="unexpected_argument" c:identifier="GHERKIN_RUNTIME_EXCEPTION_UNEXPECTED_ARGUMENT" value="1"/>
+		<member name="illegal_state" c:identifier="GHERKIN_RUNTIME_EXCEPTION_ILLEGAL_STATE" value="2"/>
+	</enumeration>
+	<record name="GherkinLanguageConstants">
+		<constant name="TAG_PREFIX" c:identifier="GHERKIN_GHERKIN_LANGUAGE_CONSTANTS_TAG_PREFIX" value="@">
+			<type name="utf8" c:type="const gchar*"/>
+		</constant>
+		<constant name="COMMENT_PREFIX" c:identifier="GHERKIN_GHERKIN_LANGUAGE_CONSTANTS_COMMENT_PREFIX" value="#">
+			<type name="utf8" c:type="const gchar*"/>
+		</constant>
+		<constant name="TITLE_KEYWORD_SEPARATOR" c:identifier="GHERKIN_GHERKIN_LANGUAGE_CONSTANTS_TITLE_KEYWORD_SEPARATOR" value=":">
+			<type name="utf8" c:type="const gchar*"/>
+		</constant>
+		<constant name="TABLE_CELL_SEPARATOR" c:identifier="GHERKIN_GHERKIN_LANGUAGE_CONSTANTS_TABLE_CELL_SEPARATOR" value="|">
+			<type name="utf8" c:type="const gchar*"/>
+		</constant>
+		<constant name="DOCSTRING_SEPARATOR" c:identifier="GHERKIN_GHERKIN_LANGUAGE_CONSTANTS_DOCSTRING_SEPARATOR" value="&quot;&quot;&quot;">
+			<type name="utf8" c:type="const gchar*"/>
+		</constant>
+		<constant name="DOCSTRING_ALTERNATIVE_SEPARATOR" c:identifier="GHERKIN_GHERKIN_LANGUAGE_CONSTANTS_DOCSTRING_ALTERNATIVE_SEPARATOR" value="```">
+			<type name="utf8" c:type="const gchar*"/>
+		</constant>
+		<constructor name="new" c:identifier="gherkin_gherkin_language_constants_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.GherkinLanguageConstants" c:type="GherkinGherkinLanguageConstants*"/>
+			</return-value>
+		</constructor>
+	</record>
+	<record name="SymbolCounter">
+		<function name="count_symbols" c:identifier="gherkin_symbol_counter_count_symbols">
+			<return-value transfer-ownership="full">
+				<type name="gint" c:type="gint"/>
+			</return-value>
+			<parameters>
+				<parameter name="str" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</function>
+		<constructor name="new" c:identifier="gherkin_symbol_counter_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.SymbolCounter" c:type="GherkinSymbolCounter*"/>
+			</return-value>
+		</constructor>
+	</record>
+	<class name="TokenScanner" c:type="GherkinTokenScanner" glib:type-name="GherkinTokenScanner" glib:get-type="gherkin_token_scanner_get_type" glib:type-struct="TokenScannerClass" parent="GObject.Object">
+		<implements name="Gherkin.ITokenScanner"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="TokenScannerPrivate" c:type="GherkinTokenScannerPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_token_scanner_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.TokenScanner" c:type="GherkinTokenScanner*"/>
+			</return-value>
+			<parameters>
+				<parameter name="source" transfer-ownership="none">
+					<type name="Gio.InputStream" c:type="GInputStream*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+	</class>
+	<record name="TokenScannerClass" c:type="GherkinTokenScannerClass" glib:is-gtype-struct-for="TokenScanner">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="TokenScannerPrivate" c:type="GherkinTokenScannerPrivate" disguised="1"/>
+	<class name="GherkinDialect" c:type="GherkinGherkinDialect" glib:type-name="GherkinGherkinDialect" glib:get-type="gherkin_gherkin_dialect_get_type" glib:type-struct="GherkinDialectClass" parent="GObject.Object">
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="GherkinDialectPrivate" c:type="GherkinGherkinDialectPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_gherkin_dialect_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+			</return-value>
+			<parameters>
+				<parameter name="language" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="keywords" transfer-ownership="none">
+					<type name="Gee.Map" c:type="GeeMap*">
+						<type name="utf8" c:type="gchar*"/>
+						<type name="Gee.ArrayList" c:type="GeeArrayList*">
+							<type name="utf8" c:type="gchar*"/>
+						</type>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<method name="get_feature_keywords" c:identifier="gherkin_gherkin_dialect_get_feature_keywords">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="utf8" c:type="gchar*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="get_scenario_keywords" c:identifier="gherkin_gherkin_dialect_get_scenario_keywords">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="utf8" c:type="gchar*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="get_step_keywords" c:identifier="gherkin_gherkin_dialect_get_step_keywords">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="utf8" c:type="gchar*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="get_background_keywords" c:identifier="gherkin_gherkin_dialect_get_background_keywords">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="utf8" c:type="gchar*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="get_scenario_outline_keywords" c:identifier="gherkin_gherkin_dialect_get_scenario_outline_keywords">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="utf8" c:type="gchar*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="get_examples_keywords" c:identifier="gherkin_gherkin_dialect_get_examples_keywords">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="utf8" c:type="gchar*"/>
+				</type>
+			</return-value>
+		</method>
+		<property name="and" writable="1">
+			<array>
+				<type name="utf8" c:type="gchar*"/>
+			</array>
+		</property>
+		<method name="get_and" c:identifier="gherkin_gherkin_dialect_get_and">
+			<return-value transfer-ownership="none">
+				<array length="0">
+					<type name="utf8" c:type="gchar*"/>
+				</array>
+			</return-value>
+			<parameters>
+				<parameter name="result_length1" direction="out" transfer-ownership="none">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="set_and" c:identifier="gherkin_gherkin_dialect_set_and">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<array length="1">
+						<type name="utf8" c:type="gchar*"/>
+					</array>
+				</parameter>
+				<parameter name="value_length1" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="background" writable="1">
+			<array>
+				<type name="utf8" c:type="gchar*"/>
+			</array>
+		</property>
+		<method name="get_background" c:identifier="gherkin_gherkin_dialect_get_background">
+			<return-value transfer-ownership="none">
+				<array length="0">
+					<type name="utf8" c:type="gchar*"/>
+				</array>
+			</return-value>
+			<parameters>
+				<parameter name="result_length1" direction="out" transfer-ownership="none">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="set_background" c:identifier="gherkin_gherkin_dialect_set_background">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<array length="1">
+						<type name="utf8" c:type="gchar*"/>
+					</array>
+				</parameter>
+				<parameter name="value_length1" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="but" writable="1">
+			<array>
+				<type name="utf8" c:type="gchar*"/>
+			</array>
+		</property>
+		<method name="get_but" c:identifier="gherkin_gherkin_dialect_get_but">
+			<return-value transfer-ownership="none">
+				<array length="0">
+					<type name="utf8" c:type="gchar*"/>
+				</array>
+			</return-value>
+			<parameters>
+				<parameter name="result_length1" direction="out" transfer-ownership="none">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="set_but" c:identifier="gherkin_gherkin_dialect_set_but">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<array length="1">
+						<type name="utf8" c:type="gchar*"/>
+					</array>
+				</parameter>
+				<parameter name="value_length1" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="examples" writable="1">
+			<array>
+				<type name="utf8" c:type="gchar*"/>
+			</array>
+		</property>
+		<method name="get_examples" c:identifier="gherkin_gherkin_dialect_get_examples">
+			<return-value transfer-ownership="none">
+				<array length="0">
+					<type name="utf8" c:type="gchar*"/>
+				</array>
+			</return-value>
+			<parameters>
+				<parameter name="result_length1" direction="out" transfer-ownership="none">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="set_examples" c:identifier="gherkin_gherkin_dialect_set_examples">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<array length="1">
+						<type name="utf8" c:type="gchar*"/>
+					</array>
+				</parameter>
+				<parameter name="value_length1" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="feature" writable="1">
+			<array>
+				<type name="utf8" c:type="gchar*"/>
+			</array>
+		</property>
+		<method name="get_feature" c:identifier="gherkin_gherkin_dialect_get_feature">
+			<return-value transfer-ownership="none">
+				<array length="0">
+					<type name="utf8" c:type="gchar*"/>
+				</array>
+			</return-value>
+			<parameters>
+				<parameter name="result_length1" direction="out" transfer-ownership="none">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="set_feature" c:identifier="gherkin_gherkin_dialect_set_feature">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<array length="1">
+						<type name="utf8" c:type="gchar*"/>
+					</array>
+				</parameter>
+				<parameter name="value_length1" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="given" writable="1">
+			<array>
+				<type name="utf8" c:type="gchar*"/>
+			</array>
+		</property>
+		<method name="get_given" c:identifier="gherkin_gherkin_dialect_get_given">
+			<return-value transfer-ownership="none">
+				<array length="0">
+					<type name="utf8" c:type="gchar*"/>
+				</array>
+			</return-value>
+			<parameters>
+				<parameter name="result_length1" direction="out" transfer-ownership="none">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="set_given" c:identifier="gherkin_gherkin_dialect_set_given">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<array length="1">
+						<type name="utf8" c:type="gchar*"/>
+					</array>
+				</parameter>
+				<parameter name="value_length1" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="name" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_name" c:identifier="gherkin_gherkin_dialect_get_name">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_name" c:identifier="gherkin_gherkin_dialect_set_name">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="native" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_native" c:identifier="gherkin_gherkin_dialect_get_native">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_native" c:identifier="gherkin_gherkin_dialect_set_native">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="scenario" writable="1">
+			<array>
+				<type name="utf8" c:type="gchar*"/>
+			</array>
+		</property>
+		<method name="get_scenario" c:identifier="gherkin_gherkin_dialect_get_scenario">
+			<return-value transfer-ownership="none">
+				<array length="0">
+					<type name="utf8" c:type="gchar*"/>
+				</array>
+			</return-value>
+			<parameters>
+				<parameter name="result_length1" direction="out" transfer-ownership="none">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="set_scenario" c:identifier="gherkin_gherkin_dialect_set_scenario">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<array length="1">
+						<type name="utf8" c:type="gchar*"/>
+					</array>
+				</parameter>
+				<parameter name="value_length1" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="scenarioOutline" writable="1">
+			<array>
+				<type name="utf8" c:type="gchar*"/>
+			</array>
+		</property>
+		<method name="get_scenarioOutline" c:identifier="gherkin_gherkin_dialect_get_scenarioOutline">
+			<return-value transfer-ownership="none">
+				<array length="0">
+					<type name="utf8" c:type="gchar*"/>
+				</array>
+			</return-value>
+			<parameters>
+				<parameter name="result_length1" direction="out" transfer-ownership="none">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="set_scenarioOutline" c:identifier="gherkin_gherkin_dialect_set_scenarioOutline">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<array length="1">
+						<type name="utf8" c:type="gchar*"/>
+					</array>
+				</parameter>
+				<parameter name="value_length1" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="then" writable="1">
+			<array>
+				<type name="utf8" c:type="gchar*"/>
+			</array>
+		</property>
+		<method name="get_then" c:identifier="gherkin_gherkin_dialect_get_then">
+			<return-value transfer-ownership="none">
+				<array length="0">
+					<type name="utf8" c:type="gchar*"/>
+				</array>
+			</return-value>
+			<parameters>
+				<parameter name="result_length1" direction="out" transfer-ownership="none">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="set_then" c:identifier="gherkin_gherkin_dialect_set_then">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<array length="1">
+						<type name="utf8" c:type="gchar*"/>
+					</array>
+				</parameter>
+				<parameter name="value_length1" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="when" writable="1">
+			<array>
+				<type name="utf8" c:type="gchar*"/>
+			</array>
+		</property>
+		<method name="get_when" c:identifier="gherkin_gherkin_dialect_get_when">
+			<return-value transfer-ownership="none">
+				<array length="0">
+					<type name="utf8" c:type="gchar*"/>
+				</array>
+			</return-value>
+			<parameters>
+				<parameter name="result_length1" direction="out" transfer-ownership="none">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="set_when" c:identifier="gherkin_gherkin_dialect_set_when">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<array length="1">
+						<type name="utf8" c:type="gchar*"/>
+					</array>
+				</parameter>
+				<parameter name="value_length1" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="language" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_language" c:identifier="gherkin_gherkin_dialect_get_language">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_language" c:identifier="gherkin_gherkin_dialect_set_language">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="GherkinDialectClass" c:type="GherkinGherkinDialectClass" glib:is-gtype-struct-for="GherkinDialect">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="GherkinDialectPrivate" c:type="GherkinGherkinDialectPrivate" disguised="1"/>
+	<record name="StringUtils">
+		<function name="joinv" c:identifier="gherkin_string_utils_joinv">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+			<parameters>
+				<parameter name="separator" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="items" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="utf8" c:type="gchar*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</function>
+		<function name="join" c:identifier="gherkin_string_utils_join">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+			<parameters>
+				<parameter name="toString" transfer-ownership="none" closure="1" scope="call">
+					<type name="Gherkin.ToString" c:type="GherkinToString"/>
+				</parameter>
+				<parameter name="toString_target" transfer-ownership="none" allow-none="1">
+					<type name="gpointer" c:type="void*"/>
+				</parameter>
+				<parameter name="separator" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="items" transfer-ownership="none">
+					<type name="Gee.Iterable" c:type="GeeIterable*">
+						<type name="gpointer" c:type="gpointer"/>
+					</type>
+				</parameter>
+			</parameters>
+		</function>
+		<function name="ltrim" c:identifier="gherkin_string_utils_ltrim">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+			<parameters>
+				<parameter name="s" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</function>
+		<constructor name="new" c:identifier="gherkin_string_utils_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.StringUtils" c:type="GherkinStringUtils*"/>
+			</return-value>
+		</constructor>
+	</record>
+	<class name="AstBuilder" c:type="GherkinAstBuilder" glib:type-name="GherkinAstBuilder" glib:get-type="gherkin_ast_builder_get_type" glib:type-struct="AstBuilderClass" parent="GObject.Object">
+		<implements name="Gherkin.Builder"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="AstBuilderPrivate" c:type="GherkinAstBuilderPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_builder_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstBuilder" c:type="GherkinAstBuilder*"/>
+			</return-value>
+		</constructor>
+	</class>
+	<record name="AstBuilderClass" c:type="GherkinAstBuilderClass" glib:is-gtype-struct-for="AstBuilder">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="AstBuilderPrivate" c:type="GherkinAstBuilderPrivate" disguised="1"/>
+	<class name="TokenMatcher" c:type="GherkinTokenMatcher" glib:type-name="GherkinTokenMatcher" glib:get-type="gherkin_token_matcher_get_type" glib:type-struct="TokenMatcherClass" parent="GObject.Object">
+		<implements name="Gherkin.ITokenMatcher"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="TokenMatcherPrivate" c:type="GherkinTokenMatcherPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_token_matcher_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.TokenMatcher" c:type="GherkinTokenMatcher*"/>
+			</return-value>
+			<parameters>
+				<parameter name="default_dialect_name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<method name="setTokenMatched" c:identifier="gherkin_token_matcher_setTokenMatched">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+				<parameter name="matched_type" transfer-ownership="none">
+					<type name="Gherkin.ParserTokenType" c:type="GherkinParserTokenType"/>
+				</parameter>
+				<parameter name="text" transfer-ownership="none" allow-none="1">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="keyword" transfer-ownership="none" allow-none="1">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="indent" transfer-ownership="none" allow-none="1">
+					<type name="gint" c:type="gint*"/>
+				</parameter>
+				<parameter name="items" transfer-ownership="none" allow-none="1">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="current-dialect" writable="1">
+			<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+		</property>
+		<method name="get_current_dialect" c:identifier="gherkin_token_matcher_get_current_dialect">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+			</return-value>
+		</method>
+	</class>
+	<record name="TokenMatcherClass" c:type="GherkinTokenMatcherClass" glib:is-gtype-struct-for="TokenMatcher">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="TokenMatcherPrivate" c:type="GherkinTokenMatcherPrivate" disguised="1"/>
+	<record name="TokenFormatter">
+		<method name="format_token" c:identifier="gherkin_token_formatter_format_token">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<constructor name="new" c:identifier="gherkin_token_formatter_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.TokenFormatter" c:type="GherkinTokenFormatter*"/>
+			</return-value>
+		</constructor>
+	</record>
+	<class name="AstNode" c:type="GherkinAstNode" glib:type-name="GherkinAstNode" glib:get-type="gherkin_ast_node_get_type" glib:type-struct="AstNodeClass" parent="GObject.Object">
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="AstNodePrivate" c:type="GherkinAstNodePrivate*"/>
+		</field>
+		<field name="ruleType">
+			<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_ast_node_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.AstNode" c:type="GherkinAstNode*"/>
+			</return-value>
+			<parameters>
+				<parameter name="ruleType" transfer-ownership="none">
+					<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<method name="add" c:identifier="gherkin_ast_node_add">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="ruleType" transfer-ownership="none">
+					<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+				</parameter>
+				<parameter name="obj" transfer-ownership="none">
+					<type name="GObject.Object" c:type="GObject*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="get_single" c:identifier="gherkin_ast_node_get_single">
+			<return-value transfer-ownership="full" allow-none="1">
+				<type name="gpointer" c:type="gpointer"/>
+			</return-value>
+			<parameters>
+				<parameter name="ruleType" transfer-ownership="none">
+					<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+				</parameter>
+				<parameter name="defaultResult" transfer-ownership="none" allow-none="1">
+					<type name="gpointer" c:type="gpointer"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="get_items" c:identifier="gherkin_ast_node_get_items">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="gpointer" c:type="gpointer"/>
+				</type>
+			</return-value>
+			<parameters>
+				<parameter name="ruleType" transfer-ownership="none">
+					<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="get_token" c:identifier="gherkin_ast_node_get_token">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.Token" c:type="GherkinToken*"/>
+			</return-value>
+			<parameters>
+				<parameter name="tokenType" transfer-ownership="none">
+					<type name="Gherkin.ParserTokenType" c:type="GherkinParserTokenType"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="get_tokens" c:identifier="gherkin_ast_node_get_tokens">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</type>
+			</return-value>
+			<parameters>
+				<parameter name="tokenType" transfer-ownership="none">
+					<type name="Gherkin.ParserTokenType" c:type="GherkinParserTokenType"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="AstNodeClass" c:type="GherkinAstNodeClass" glib:is-gtype-struct-for="AstNode">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="AstNodePrivate" c:type="GherkinAstNodePrivate" disguised="1"/>
+	<class name="GherkinLineSpan" c:type="GherkinGherkinLineSpan" glib:type-name="GherkinGherkinLineSpan" glib:get-type="gherkin_gherkin_line_span_get_type" glib:type-struct="GherkinLineSpanClass" parent="GObject.Object">
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="GherkinLineSpanPrivate" c:type="GherkinGherkinLineSpanPrivate*"/>
+		</field>
+		<field name="column">
+			<type name="gint" c:type="gint"/>
+		</field>
+		<field name="text">
+			<type name="utf8" c:type="gchar*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_gherkin_line_span_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+			</return-value>
+			<parameters>
+				<parameter name="column" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+				<parameter name="text" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<method name="equals" c:identifier="gherkin_gherkin_line_span_equals">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="o" transfer-ownership="none">
+					<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="hash_code" c:identifier="gherkin_gherkin_line_span_hash_code">
+			<return-value transfer-ownership="full">
+				<type name="gint" c:type="gint"/>
+			</return-value>
+		</method>
+	</class>
+	<record name="GherkinLineSpanClass" c:type="GherkinGherkinLineSpanClass" glib:is-gtype-struct-for="GherkinLineSpan">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="GherkinLineSpanPrivate" c:type="GherkinGherkinLineSpanPrivate" disguised="1"/>
+	<class name="GherkinLine" c:type="GherkinGherkinLine" glib:type-name="GherkinGherkinLine" glib:get-type="gherkin_gherkin_line_get_type" glib:type-struct="GherkinLineClass" parent="GObject.Object">
+		<implements name="Gherkin.IGherkinLine"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="GherkinLinePrivate" c:type="GherkinGherkinLinePrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_gherkin_line_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.GherkinLine" c:type="GherkinGherkinLine*"/>
+			</return-value>
+			<parameters>
+				<parameter name="lineText" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+	</class>
+	<record name="GherkinLineClass" c:type="GherkinGherkinLineClass" glib:is-gtype-struct-for="GherkinLine">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="GherkinLinePrivate" c:type="GherkinGherkinLinePrivate" disguised="1"/>
+	<class name="GherkinDialectProvider" c:type="GherkinGherkinDialectProvider" glib:type-name="GherkinGherkinDialectProvider" glib:get-type="gherkin_gherkin_dialect_provider_get_type" glib:type-struct="GherkinDialectProviderClass" parent="GObject.Object">
+		<implements name="Gherkin.IGherkinDialectProvider"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="GherkinDialectProviderPrivate" c:type="GherkinGherkinDialectProviderPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_gherkin_dialect_provider_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.GherkinDialectProvider" c:type="GherkinGherkinDialectProvider*"/>
+			</return-value>
+			<parameters>
+				<parameter name="default_dialect_name" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+	</class>
+	<record name="GherkinDialectProviderClass" c:type="GherkinGherkinDialectProviderClass" glib:is-gtype-struct-for="GherkinDialectProvider">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="GherkinDialectProviderPrivate" c:type="GherkinGherkinDialectProviderPrivate" disguised="1"/>
+	<class name="TokenFormatterBuilder" c:type="GherkinTokenFormatterBuilder" glib:type-name="GherkinTokenFormatterBuilder" glib:get-type="gherkin_token_formatter_builder_get_type" glib:type-struct="TokenFormatterBuilderClass" parent="GObject.Object">
+		<implements name="Gherkin.Builder"/>
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="TokenFormatterBuilderPrivate" c:type="GherkinTokenFormatterBuilderPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_token_formatter_builder_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.TokenFormatterBuilder" c:type="GherkinTokenFormatterBuilder*"/>
+			</return-value>
+		</constructor>
+	</class>
+	<record name="TokenFormatterBuilderClass" c:type="GherkinTokenFormatterBuilderClass" glib:is-gtype-struct-for="TokenFormatterBuilder">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="TokenFormatterBuilderPrivate" c:type="GherkinTokenFormatterBuilderPrivate" disguised="1"/>
+	<record name="Parser">
+		<constructor name="new" c:identifier="gherkin_parser_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.Parser" c:type="GherkinParser*"/>
+			</return-value>
+			<parameters>
+				<parameter name="builder" transfer-ownership="none">
+					<type name="Gherkin.Builder" c:type="GherkinBuilder*">
+						<type name="gpointer" c:type="gpointer"/>
+					</type>
+				</parameter>
+			</parameters>
+		</constructor>
+		<method name="parse_string" c:identifier="gherkin_parser_parse_string" throws="1">
+			<return-value transfer-ownership="full" allow-none="1">
+				<type name="gpointer" c:type="gpointer"/>
+			</return-value>
+			<parameters>
+				<parameter name="source" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="tokenMatcher" transfer-ownership="none" allow-none="1">
+					<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="parse_reader" c:identifier="gherkin_parser_parse_reader" throws="1">
+			<return-value transfer-ownership="full" allow-none="1">
+				<type name="gpointer" c:type="gpointer"/>
+			</return-value>
+			<parameters>
+				<parameter name="source" transfer-ownership="none">
+					<type name="Gio.InputStream" c:type="GInputStream*"/>
+				</parameter>
+				<parameter name="tokenMatcher" transfer-ownership="none" allow-none="1">
+					<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<method name="parse" c:identifier="gherkin_parser_parse" throws="1">
+			<return-value transfer-ownership="full" allow-none="1">
+				<type name="gpointer" c:type="gpointer"/>
+			</return-value>
+			<parameters>
+				<parameter name="tokenScanner" transfer-ownership="none">
+					<type name="Gherkin.ITokenScanner" c:type="GherkinITokenScanner*"/>
+				</parameter>
+				<parameter name="tokenMatcher" transfer-ownership="none">
+					<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="stop-at-first-error" writable="1">
+			<type name="gboolean" c:type="gboolean"/>
+		</property>
+		<method name="get_stop_at_first_error" c:identifier="gherkin_parser_get_stop_at_first_error">
+			<return-value transfer-ownership="none">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+		</method>
+		<method name="set_stop_at_first_error" c:identifier="gherkin_parser_set_stop_at_first_error">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="gboolean" c:type="gboolean"/>
+				</parameter>
+			</parameters>
+		</method>
+	</record>
+	<enumeration name="ParserTokenType" c:type="GherkinParserTokenType" glib:type-name="GherkinParserTokenType" glib:get-type="gherkin_parser_token_type_get_type">
+		<member name="none" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_None" value="0"/>
+		<member name="eof" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_EOF" value="1"/>
+		<member name="empty" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_Empty" value="2"/>
+		<member name="comment" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_Comment" value="3"/>
+		<member name="tagline" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_TagLine" value="4"/>
+		<member name="featureline" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_FeatureLine" value="5"/>
+		<member name="backgroundline" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_BackgroundLine" value="6"/>
+		<member name="scenarioline" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_ScenarioLine" value="7"/>
+		<member name="scenariooutlineline" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_ScenarioOutlineLine" value="8"/>
+		<member name="examplesline" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_ExamplesLine" value="9"/>
+		<member name="stepline" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_StepLine" value="10"/>
+		<member name="docstringseparator" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_DocStringSeparator" value="11"/>
+		<member name="tablerow" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_TableRow" value="12"/>
+		<member name="language" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_Language" value="13"/>
+		<member name="other" c:identifier="GHERKIN_PARSER_TOKEN_TYPE_Other" value="14"/>
+	</enumeration>
+	<function name="parser_token_type_to_string" c:identifier="gherkin_parser_token_type_to_string">
+		<return-value transfer-ownership="full">
+			<type name="utf8" c:type="gchar*"/>
+		</return-value>
+	</function>
+	<enumeration name="ParserRuleType" c:type="GherkinParserRuleType" glib:type-name="GherkinParserRuleType" glib:get-type="gherkin_parser_rule_type_get_type">
+		<member name="none" c:identifier="GHERKIN_PARSER_RULE_TYPE_None" value="0"/>
+		<member name="_eof" c:identifier="GHERKIN_PARSER_RULE_TYPE__EOF" value="1"/>
+		<member name="_empty" c:identifier="GHERKIN_PARSER_RULE_TYPE__Empty" value="2"/>
+		<member name="_comment" c:identifier="GHERKIN_PARSER_RULE_TYPE__Comment" value="3"/>
+		<member name="_tagline" c:identifier="GHERKIN_PARSER_RULE_TYPE__TagLine" value="4"/>
+		<member name="_featureline" c:identifier="GHERKIN_PARSER_RULE_TYPE__FeatureLine" value="5"/>
+		<member name="_backgroundline" c:identifier="GHERKIN_PARSER_RULE_TYPE__BackgroundLine" value="6"/>
+		<member name="_scenarioline" c:identifier="GHERKIN_PARSER_RULE_TYPE__ScenarioLine" value="7"/>
+		<member name="_scenariooutlineline" c:identifier="GHERKIN_PARSER_RULE_TYPE__ScenarioOutlineLine" value="8"/>
+		<member name="_examplesline" c:identifier="GHERKIN_PARSER_RULE_TYPE__ExamplesLine" value="9"/>
+		<member name="_stepline" c:identifier="GHERKIN_PARSER_RULE_TYPE__StepLine" value="10"/>
+		<member name="_docstringseparator" c:identifier="GHERKIN_PARSER_RULE_TYPE__DocStringSeparator" value="11"/>
+		<member name="_tablerow" c:identifier="GHERKIN_PARSER_RULE_TYPE__TableRow" value="12"/>
+		<member name="_language" c:identifier="GHERKIN_PARSER_RULE_TYPE__Language" value="13"/>
+		<member name="_other" c:identifier="GHERKIN_PARSER_RULE_TYPE__Other" value="14"/>
+		<member name="feature" c:identifier="GHERKIN_PARSER_RULE_TYPE_Feature" value="15"/>
+		<member name="feature_header" c:identifier="GHERKIN_PARSER_RULE_TYPE_Feature_Header" value="16"/>
+		<member name="background" c:identifier="GHERKIN_PARSER_RULE_TYPE_Background" value="17"/>
+		<member name="scenario_definition" c:identifier="GHERKIN_PARSER_RULE_TYPE_Scenario_Definition" value="18"/>
+		<member name="scenario" c:identifier="GHERKIN_PARSER_RULE_TYPE_Scenario" value="19"/>
+		<member name="scenariooutline" c:identifier="GHERKIN_PARSER_RULE_TYPE_ScenarioOutline" value="20"/>
+		<member name="examples_definition" c:identifier="GHERKIN_PARSER_RULE_TYPE_Examples_Definition" value="21"/>
+		<member name="examples" c:identifier="GHERKIN_PARSER_RULE_TYPE_Examples" value="22"/>
+		<member name="scenario_step" c:identifier="GHERKIN_PARSER_RULE_TYPE_Scenario_Step" value="23"/>
+		<member name="scenariooutline_step" c:identifier="GHERKIN_PARSER_RULE_TYPE_ScenarioOutline_Step" value="24"/>
+		<member name="step" c:identifier="GHERKIN_PARSER_RULE_TYPE_Step" value="25"/>
+		<member name="step_arg" c:identifier="GHERKIN_PARSER_RULE_TYPE_Step_Arg" value="26"/>
+		<member name="datatable" c:identifier="GHERKIN_PARSER_RULE_TYPE_DataTable" value="27"/>
+		<member name="docstring" c:identifier="GHERKIN_PARSER_RULE_TYPE_DocString" value="28"/>
+		<member name="tags" c:identifier="GHERKIN_PARSER_RULE_TYPE_Tags" value="29"/>
+		<member name="feature_description" c:identifier="GHERKIN_PARSER_RULE_TYPE_Feature_Description" value="30"/>
+		<member name="background_description" c:identifier="GHERKIN_PARSER_RULE_TYPE_Background_Description" value="31"/>
+		<member name="scenario_description" c:identifier="GHERKIN_PARSER_RULE_TYPE_Scenario_Description" value="32"/>
+		<member name="scenariooutline_description" c:identifier="GHERKIN_PARSER_RULE_TYPE_ScenarioOutline_Description" value="33"/>
+		<member name="examples_description" c:identifier="GHERKIN_PARSER_RULE_TYPE_Examples_Description" value="34"/>
+		<member name="description_helper" c:identifier="GHERKIN_PARSER_RULE_TYPE_Description_Helper" value="35"/>
+		<member name="description" c:identifier="GHERKIN_PARSER_RULE_TYPE_Description" value="36"/>
+	</enumeration>
+	<class name="Token" c:type="GherkinToken" glib:type-name="GherkinToken" glib:get-type="gherkin_token_get_type" glib:type-struct="TokenClass" parent="GObject.Object">
+		<field name="parent_instance">
+			<type name="GObject.Object" c:type="GObject"/>
+		</field>
+		<field name="priv">
+			<type name="TokenPrivate" c:type="GherkinTokenPrivate*"/>
+		</field>
+		<constructor name="new" c:identifier="gherkin_token_new">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.Token" c:type="GherkinToken*"/>
+			</return-value>
+			<parameters>
+				<parameter name="line" transfer-ownership="none" allow-none="1">
+					<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+				</parameter>
+				<parameter name="location" transfer-ownership="none" allow-none="1">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+			</parameters>
+		</constructor>
+		<method name="is_EOF" c:identifier="gherkin_token_is_EOF">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+		</method>
+		<method name="detach" c:identifier="gherkin_token_detach">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+		</method>
+		<method name="get_token_value" c:identifier="gherkin_token_get_token_value">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+		</method>
+		<method name="to_string" c:identifier="gherkin_token_to_string">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+		</method>
+		<property name="line" writable="1">
+			<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+		</property>
+		<method name="get_line" c:identifier="gherkin_token_get_line">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+			</return-value>
+		</method>
+		<method name="set_line" c:identifier="gherkin_token_set_line">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="matched-type" writable="1">
+			<type name="Gherkin.ParserTokenType" c:type="GherkinParserTokenType"/>
+		</property>
+		<method name="get_matched_type" c:identifier="gherkin_token_get_matched_type">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.ParserTokenType" c:type="GherkinParserTokenType"/>
+			</return-value>
+		</method>
+		<method name="set_matched_type" c:identifier="gherkin_token_set_matched_type">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.ParserTokenType" c:type="GherkinParserTokenType"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="matched-keyword" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_matched_keyword" c:identifier="gherkin_token_get_matched_keyword">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_matched_keyword" c:identifier="gherkin_token_set_matched_keyword">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="matched-text" writable="1">
+			<type name="utf8" c:type="gchar*"/>
+		</property>
+		<method name="get_matched_text" c:identifier="gherkin_token_get_matched_text">
+			<return-value transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</return-value>
+		</method>
+		<method name="set_matched_text" c:identifier="gherkin_token_set_matched_text">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="matched-items" writable="1">
+			<type name="Gee.ArrayList" c:type="GeeArrayList*">
+				<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+			</type>
+		</property>
+		<method name="get_matched_items" c:identifier="gherkin_token_get_matched_items">
+			<return-value transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+				</type>
+			</return-value>
+		</method>
+		<method name="set_matched_items" c:identifier="gherkin_token_set_matched_items">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+					</type>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="matched-indent" writable="1">
+			<type name="gint" c:type="gint"/>
+		</property>
+		<method name="get_matched_indent" c:identifier="gherkin_token_get_matched_indent">
+			<return-value transfer-ownership="none">
+				<type name="gint" c:type="gint"/>
+			</return-value>
+		</method>
+		<method name="set_matched_indent" c:identifier="gherkin_token_set_matched_indent">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="matched-gherkin-dialect" writable="1">
+			<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+		</property>
+		<method name="get_matched_gherkin_dialect" c:identifier="gherkin_token_get_matched_gherkin_dialect">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+			</return-value>
+		</method>
+		<method name="set_matched_gherkin_dialect" c:identifier="gherkin_token_set_matched_gherkin_dialect">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<property name="location" writable="1">
+			<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+		</property>
+		<method name="get_location" c:identifier="gherkin_token_get_location">
+			<return-value transfer-ownership="none">
+				<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+			</return-value>
+		</method>
+		<method name="set_location" c:identifier="gherkin_token_set_location">
+			<return-value transfer-ownership="none">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="value" transfer-ownership="none">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+			</parameters>
+		</method>
+	</class>
+	<record name="TokenClass" c:type="GherkinTokenClass" glib:is-gtype-struct-for="Token">
+		<field name="parent_class">
+			<type name="GObject.ObjectClass" c:type="GObjectClass"/>
+		</field>
+	</record>
+	<record name="TokenPrivate" c:type="GherkinTokenPrivate" disguised="1"/>
+	<interface name="IGherkinDialectProvider" c:type="GherkinIGherkinDialectProvider" glib:type-name="GherkinIGherkinDialectProvider" glib:get-type="gherkin_igherkin_dialect_provider_get_type" glib:type-struct="IGherkinDialectProviderIface">
+		<prerequisite name="GObject.Object"/>
+		<method name="get_default_dialect" c:identifier="gherkin_igherkin_dialect_provider_get_default_dialect">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+			</return-value>
+		</method>
+		<virtual-method name="get_default_dialect" invoker="get_default_dialect">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+			</return-value>
+		</virtual-method>
+		<method name="get_dialect" c:identifier="gherkin_igherkin_dialect_provider_get_dialect">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+			</return-value>
+			<parameters>
+				<parameter name="language" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="location" transfer-ownership="none" allow-none="1">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="get_dialect" invoker="get_dialect">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+			</return-value>
+			<parameters>
+				<parameter name="language" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+				<parameter name="location" transfer-ownership="none" allow-none="1">
+					<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+	</interface>
+	<record name="IGherkinDialectProviderIface" c:type="GherkinIGherkinDialectProviderIface" glib:is-gtype-struct-for="IGherkinDialectProvider">
+		<field name="parent_iface">
+			<type name="GObject.TypeInterface" c:type="GTypeInterface"/>
+		</field>
+		<field name="get_default_dialect">
+			<callback name="get_default_dialect" c:type="get_default_dialect">
+				<return-value transfer-ownership="full">
+					<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinDialectProvider" c:type="GherkinIGherkinDialectProvider*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="get_dialect">
+			<callback name="get_dialect" c:type="get_dialect">
+				<return-value transfer-ownership="full">
+					<type name="Gherkin.GherkinDialect" c:type="GherkinGherkinDialect*"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinDialectProvider" c:type="GherkinIGherkinDialectProvider*"/>
+					</parameter>
+					<parameter name="language" transfer-ownership="none">
+						<type name="utf8" c:type="const gchar*"/>
+					</parameter>
+					<parameter name="location" transfer-ownership="none" allow-none="1">
+						<type name="Gherkin.AstLocation" c:type="GherkinAstLocation*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+	</record>
+	<interface name="IGherkinLine" c:type="GherkinIGherkinLine" glib:type-name="GherkinIGherkinLine" glib:get-type="gherkin_igherkin_line_get_type" glib:type-struct="IGherkinLineIface">
+		<prerequisite name="GObject.Object"/>
+		<method name="indent" c:identifier="gherkin_igherkin_line_indent">
+			<return-value transfer-ownership="full">
+				<type name="gint" c:type="gint"/>
+			</return-value>
+		</method>
+		<virtual-method name="indent" invoker="indent">
+			<return-value transfer-ownership="full">
+				<type name="gint" c:type="gint"/>
+			</return-value>
+		</virtual-method>
+		<method name="detach" c:identifier="gherkin_igherkin_line_detach">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+		</method>
+		<virtual-method name="detach" invoker="detach">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+		</virtual-method>
+		<method name="get_line_text" c:identifier="gherkin_igherkin_line_get_line_text">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+			<parameters>
+				<parameter name="indentToRemove" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="get_line_text" invoker="get_line_text">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+			<parameters>
+				<parameter name="indentToRemove" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="is_empty" c:identifier="gherkin_igherkin_line_is_empty">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+		</method>
+		<virtual-method name="is_empty" invoker="is_empty">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+		</virtual-method>
+		<method name="starts_with" c:identifier="gherkin_igherkin_line_starts_with">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="prefix" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="starts_with" invoker="starts_with">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="prefix" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="get_rest_trimmed" c:identifier="gherkin_igherkin_line_get_rest_trimmed">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+			<parameters>
+				<parameter name="length" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="get_rest_trimmed" invoker="get_rest_trimmed">
+			<return-value transfer-ownership="full">
+				<type name="utf8" c:type="gchar*"/>
+			</return-value>
+			<parameters>
+				<parameter name="length" transfer-ownership="none">
+					<type name="gint" c:type="gint"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="get_tags" c:identifier="gherkin_igherkin_line_get_tags">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+				</type>
+			</return-value>
+		</method>
+		<virtual-method name="get_tags" invoker="get_tags">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+				</type>
+			</return-value>
+		</virtual-method>
+		<method name="starts_with_title_keyword" c:identifier="gherkin_igherkin_line_starts_with_title_keyword">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="keyword" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="starts_with_title_keyword" invoker="starts_with_title_keyword">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="keyword" transfer-ownership="none">
+					<type name="utf8" c:type="const gchar*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="get_table_cells" c:identifier="gherkin_igherkin_line_get_table_cells">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+				</type>
+			</return-value>
+		</method>
+		<virtual-method name="get_table_cells" invoker="get_table_cells">
+			<return-value transfer-ownership="full">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+				</type>
+			</return-value>
+		</virtual-method>
+	</interface>
+	<record name="IGherkinLineIface" c:type="GherkinIGherkinLineIface" glib:is-gtype-struct-for="IGherkinLine">
+		<field name="parent_iface">
+			<type name="GObject.TypeInterface" c:type="GTypeInterface"/>
+		</field>
+		<field name="indent">
+			<callback name="indent" c:type="indent">
+				<return-value transfer-ownership="full">
+					<type name="gint" c:type="gint"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="detach">
+			<callback name="detach" c:type="detach">
+				<return-value transfer-ownership="full">
+					<type name="none"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="get_line_text">
+			<callback name="get_line_text" c:type="get_line_text">
+				<return-value transfer-ownership="full">
+					<type name="utf8" c:type="gchar*"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+					</parameter>
+					<parameter name="indentToRemove" transfer-ownership="none">
+						<type name="gint" c:type="gint"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="is_empty">
+			<callback name="is_empty" c:type="is_empty">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="starts_with">
+			<callback name="starts_with" c:type="starts_with">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+					</parameter>
+					<parameter name="prefix" transfer-ownership="none">
+						<type name="utf8" c:type="const gchar*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="get_rest_trimmed">
+			<callback name="get_rest_trimmed" c:type="get_rest_trimmed">
+				<return-value transfer-ownership="full">
+					<type name="utf8" c:type="gchar*"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+					</parameter>
+					<parameter name="length" transfer-ownership="none">
+						<type name="gint" c:type="gint"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="get_tags">
+			<callback name="get_tags" c:type="get_tags">
+				<return-value transfer-ownership="full">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+					</type>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="starts_with_title_keyword">
+			<callback name="starts_with_title_keyword" c:type="starts_with_title_keyword">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+					</parameter>
+					<parameter name="keyword" transfer-ownership="none">
+						<type name="utf8" c:type="const gchar*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="get_table_cells">
+			<callback name="get_table_cells" c:type="get_table_cells">
+				<return-value transfer-ownership="full">
+					<type name="Gee.ArrayList" c:type="GeeArrayList*">
+						<type name="Gherkin.GherkinLineSpan" c:type="GherkinGherkinLineSpan*"/>
+					</type>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.IGherkinLine" c:type="GherkinIGherkinLine*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+	</record>
+	<interface name="Builder" c:type="GherkinBuilder" glib:type-name="GherkinBuilder" glib:get-type="gherkin_builder_get_type" glib:type-struct="BuilderIface">
+		<prerequisite name="GObject.Object"/>
+		<method name="build" c:identifier="gherkin_builder_build">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="build" invoker="build">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="start_rule" c:identifier="gherkin_builder_start_rule">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="ruleType" transfer-ownership="none">
+					<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="start_rule" invoker="start_rule">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="ruleType" transfer-ownership="none">
+					<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="end_rule" c:identifier="gherkin_builder_end_rule">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="ruleType" transfer-ownership="none">
+					<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="end_rule" invoker="end_rule">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+			<parameters>
+				<parameter name="ruleType" transfer-ownership="none">
+					<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="get_result" c:identifier="gherkin_builder_get_result">
+			<return-value transfer-ownership="full" allow-none="1">
+				<type name="gpointer" c:type="gpointer"/>
+			</return-value>
+		</method>
+		<virtual-method name="get_result" invoker="get_result">
+			<return-value transfer-ownership="full" allow-none="1">
+				<type name="gpointer" c:type="gpointer"/>
+			</return-value>
+		</virtual-method>
+		<method name="reset" c:identifier="gherkin_builder_reset">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+		</method>
+		<virtual-method name="reset" invoker="reset">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+		</virtual-method>
+	</interface>
+	<record name="BuilderIface" c:type="GherkinBuilderIface" glib:is-gtype-struct-for="Builder">
+		<field name="parent_iface">
+			<type name="GObject.TypeInterface" c:type="GTypeInterface"/>
+		</field>
+		<field name="build">
+			<callback name="build" c:type="build">
+				<return-value transfer-ownership="full">
+					<type name="none"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.Builder" c:type="GherkinBuilder*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="start_rule">
+			<callback name="start_rule" c:type="start_rule">
+				<return-value transfer-ownership="full">
+					<type name="none"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.Builder" c:type="GherkinBuilder*"/>
+					</parameter>
+					<parameter name="ruleType" transfer-ownership="none">
+						<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="end_rule">
+			<callback name="end_rule" c:type="end_rule">
+				<return-value transfer-ownership="full">
+					<type name="none"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.Builder" c:type="GherkinBuilder*"/>
+					</parameter>
+					<parameter name="ruleType" transfer-ownership="none">
+						<type name="Gherkin.ParserRuleType" c:type="GherkinParserRuleType"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="get_result">
+			<callback name="get_result" c:type="get_result">
+				<return-value transfer-ownership="full" allow-none="1">
+					<type name="gpointer" c:type="gpointer"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.Builder" c:type="GherkinBuilder*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="reset">
+			<callback name="reset" c:type="reset">
+				<return-value transfer-ownership="full">
+					<type name="none"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.Builder" c:type="GherkinBuilder*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+	</record>
+	<interface name="ITokenScanner" c:type="GherkinITokenScanner" glib:type-name="GherkinITokenScanner" glib:get-type="gherkin_itoken_scanner_get_type" glib:type-struct="ITokenScannerIface">
+		<prerequisite name="GObject.Object"/>
+		<method name="read" c:identifier="gherkin_itoken_scanner_read">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.Token" c:type="GherkinToken*"/>
+			</return-value>
+		</method>
+		<virtual-method name="read" invoker="read">
+			<return-value transfer-ownership="full">
+				<type name="Gherkin.Token" c:type="GherkinToken*"/>
+			</return-value>
+		</virtual-method>
+	</interface>
+	<record name="ITokenScannerIface" c:type="GherkinITokenScannerIface" glib:is-gtype-struct-for="ITokenScanner">
+		<field name="parent_iface">
+			<type name="GObject.TypeInterface" c:type="GTypeInterface"/>
+		</field>
+		<field name="read">
+			<callback name="read" c:type="read">
+				<return-value transfer-ownership="full">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenScanner" c:type="GherkinITokenScanner*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+	</record>
+	<interface name="ITokenMatcher" c:type="GherkinITokenMatcher" glib:type-name="GherkinITokenMatcher" glib:get-type="gherkin_itoken_matcher_get_type" glib:type-struct="ITokenMatcherIface">
+		<prerequisite name="GObject.Object"/>
+		<method name="match_EOF" c:identifier="gherkin_itoken_matcher_match_EOF">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_EOF" invoker="match_EOF">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_Empty" c:identifier="gherkin_itoken_matcher_match_Empty">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_Empty" invoker="match_Empty">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_Comment" c:identifier="gherkin_itoken_matcher_match_Comment">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_Comment" invoker="match_Comment">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_TagLine" c:identifier="gherkin_itoken_matcher_match_TagLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_TagLine" invoker="match_TagLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_FeatureLine" c:identifier="gherkin_itoken_matcher_match_FeatureLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_FeatureLine" invoker="match_FeatureLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_BackgroundLine" c:identifier="gherkin_itoken_matcher_match_BackgroundLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_BackgroundLine" invoker="match_BackgroundLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_ScenarioLine" c:identifier="gherkin_itoken_matcher_match_ScenarioLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_ScenarioLine" invoker="match_ScenarioLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_ScenarioOutlineLine" c:identifier="gherkin_itoken_matcher_match_ScenarioOutlineLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_ScenarioOutlineLine" invoker="match_ScenarioOutlineLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_ExamplesLine" c:identifier="gherkin_itoken_matcher_match_ExamplesLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_ExamplesLine" invoker="match_ExamplesLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_StepLine" c:identifier="gherkin_itoken_matcher_match_StepLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_StepLine" invoker="match_StepLine">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_DocStringSeparator" c:identifier="gherkin_itoken_matcher_match_DocStringSeparator">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_DocStringSeparator" invoker="match_DocStringSeparator">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_TableRow" c:identifier="gherkin_itoken_matcher_match_TableRow">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_TableRow" invoker="match_TableRow">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_Language" c:identifier="gherkin_itoken_matcher_match_Language">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_Language" invoker="match_Language">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="match_Other" c:identifier="gherkin_itoken_matcher_match_Other">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</method>
+		<virtual-method name="match_Other" invoker="match_Other">
+			<return-value transfer-ownership="full">
+				<type name="gboolean" c:type="gboolean"/>
+			</return-value>
+			<parameters>
+				<parameter name="token" transfer-ownership="none">
+					<type name="Gherkin.Token" c:type="GherkinToken*"/>
+				</parameter>
+			</parameters>
+		</virtual-method>
+		<method name="reset" c:identifier="gherkin_itoken_matcher_reset">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+		</method>
+		<virtual-method name="reset" invoker="reset">
+			<return-value transfer-ownership="full">
+				<type name="none"/>
+			</return-value>
+		</virtual-method>
+	</interface>
+	<record name="ITokenMatcherIface" c:type="GherkinITokenMatcherIface" glib:is-gtype-struct-for="ITokenMatcher">
+		<field name="parent_iface">
+			<type name="GObject.TypeInterface" c:type="GTypeInterface"/>
+		</field>
+		<field name="match_EOF">
+			<callback name="match_EOF" c:type="match_EOF">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_Empty">
+			<callback name="match_Empty" c:type="match_Empty">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_Comment">
+			<callback name="match_Comment" c:type="match_Comment">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_TagLine">
+			<callback name="match_TagLine" c:type="match_TagLine">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_FeatureLine">
+			<callback name="match_FeatureLine" c:type="match_FeatureLine">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_BackgroundLine">
+			<callback name="match_BackgroundLine" c:type="match_BackgroundLine">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_ScenarioLine">
+			<callback name="match_ScenarioLine" c:type="match_ScenarioLine">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_ScenarioOutlineLine">
+			<callback name="match_ScenarioOutlineLine" c:type="match_ScenarioOutlineLine">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_ExamplesLine">
+			<callback name="match_ExamplesLine" c:type="match_ExamplesLine">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_StepLine">
+			<callback name="match_StepLine" c:type="match_StepLine">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_DocStringSeparator">
+			<callback name="match_DocStringSeparator" c:type="match_DocStringSeparator">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_TableRow">
+			<callback name="match_TableRow" c:type="match_TableRow">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_Language">
+			<callback name="match_Language" c:type="match_Language">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="match_Other">
+			<callback name="match_Other" c:type="match_Other">
+				<return-value transfer-ownership="full">
+					<type name="gboolean" c:type="gboolean"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+					<parameter name="token" transfer-ownership="none">
+						<type name="Gherkin.Token" c:type="GherkinToken*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+		<field name="reset">
+			<callback name="reset" c:type="reset">
+				<return-value transfer-ownership="full">
+					<type name="none"/>
+				</return-value>
+				<parameters>
+					<parameter name="self" transfer-ownership="none">
+						<type name="Gherkin.ITokenMatcher" c:type="GherkinITokenMatcher*"/>
+					</parameter>
+				</parameters>
+			</callback>
+		</field>
+	</record>
+	<callback name="ToString" c:type="GherkinToString">
+		<return-value transfer-ownership="full">
+			<type name="utf8" c:type="gchar*"/>
+		</return-value>
+		<parameters>
+			<parameter name="t" transfer-ownership="none" allow-none="1">
+				<type name="gpointer" c:type="gpointer"/>
+			</parameter>
+			<parameter name="user_data" transfer-ownership="none" closure="1">
+				<type name="gpointer" c:type="void*"/>
+			</parameter>
+		</parameters>
+	</callback>
+	<callback name="Func" c:type="GherkinFunc">
+		<return-value transfer-ownership="full" allow-none="1">
+			<type name="gpointer" c:type="gpointer"/>
+		</return-value>
+	</callback>
+	<function name="UnexpectedEOFException" c:identifier="gherkin_UnexpectedEOFException">
+		<return-value transfer-ownership="full">
+			<type name="Gherkin.ParserException" c:type="GError*"/>
+		</return-value>
+		<parameters>
+			<parameter name="receivedToken" transfer-ownership="none">
+				<type name="Gherkin.Token" c:type="GherkinToken*"/>
+			</parameter>
+			<parameter name="expectedTokenTypes" transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="utf8" c:type="gchar*"/>
+				</type>
+			</parameter>
+			<parameter name="stateComment" transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</parameter>
+		</parameters>
+	</function>
+	<function name="UnexpectedTokenException" c:identifier="gherkin_UnexpectedTokenException">
+		<return-value transfer-ownership="full">
+			<type name="Gherkin.ParserException" c:type="GError*"/>
+		</return-value>
+		<parameters>
+			<parameter name="receivedToken" transfer-ownership="none">
+				<type name="Gherkin.Token" c:type="GherkinToken*"/>
+			</parameter>
+			<parameter name="expectedTokenTypes" transfer-ownership="none">
+				<type name="Gee.ArrayList" c:type="GeeArrayList*">
+					<type name="utf8" c:type="gchar*"/>
+				</type>
+			</parameter>
+			<parameter name="stateComment" transfer-ownership="none">
+				<type name="utf8" c:type="const gchar*"/>
+			</parameter>
+		</parameters>
+	</function>
+</namespace>
+</repository>

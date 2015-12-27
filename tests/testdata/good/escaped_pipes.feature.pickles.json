@@ -1,0 +1,127 @@
+[
+  {
+    "locations": [
+      {
+        "column": 3,
+        "line": 2,
+        "path": "../testdata/good/escaped_pipes.feature"
+      }
+    ],
+    "name": "Scenario: They are the future",
+    "steps": [
+      {
+        "arguments": [
+          {
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "location": {
+                      "column": 9,
+                      "line": 4,
+                      "path": "../testdata/good/escaped_pipes.feature"
+                    },
+                    "value": "æ"
+                  },
+                  {
+                    "location": {
+                      "column": 13,
+                      "line": 4,
+                      "path": "../testdata/good/escaped_pipes.feature"
+                    },
+                    "value": "o"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "location": {
+                      "column": 9,
+                      "line": 5,
+                      "path": "../testdata/good/escaped_pipes.feature"
+                    },
+                    "value": "a"
+                  },
+                  {
+                    "location": {
+                      "column": 13,
+                      "line": 5,
+                      "path": "../testdata/good/escaped_pipes.feature"
+                    },
+                    "value": "ø"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "locations": [
+          {
+            "column": 11,
+            "line": 3,
+            "path": "../testdata/good/escaped_pipes.feature"
+          }
+        ],
+        "text": "they have arrived"
+      },
+      {
+        "arguments": [
+          {
+            "rows": [
+              {
+                "cells": [
+                  {
+                    "location": {
+                      "column": 9,
+                      "line": 7,
+                      "path": "../testdata/good/escaped_pipes.feature"
+                    },
+                    "value": "æ"
+                  },
+                  {
+                    "location": {
+                      "column": 15,
+                      "line": 7,
+                      "path": "../testdata/good/escaped_pipes.feature"
+                    },
+                    "value": "|o"
+                  }
+                ]
+              },
+              {
+                "cells": [
+                  {
+                    "location": {
+                      "column": 9,
+                      "line": 8,
+                      "path": "../testdata/good/escaped_pipes.feature"
+                    },
+                    "value": "|a"
+                  },
+                  {
+                    "location": {
+                      "column": 15,
+                      "line": 8,
+                      "path": "../testdata/good/escaped_pipes.feature"
+                    },
+                    "value": "ø\\"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "locations": [
+          {
+            "column": 11,
+            "line": 6,
+            "path": "../testdata/good/escaped_pipes.feature"
+          }
+        ],
+        "text": "they have arrived"
+      }
+    ],
+    "tags": []
+  }
+]
