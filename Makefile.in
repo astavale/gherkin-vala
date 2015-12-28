@@ -637,6 +637,9 @@ CLEANFILES = \
 	$(libgherkin3_la_SOURCES:.vala=.c) \
 	$(build_gherkin_generate_ast_SOURCES:.vala=.c) \
 	$(test_libgherkin3_SOURCES:.vala=.c) \
+	libgherkin3-0.1.vapi \
+	libgherkin3.h \
+	Gherkin3-1.0.gir \
 	*.stamp
 
 all: config.h
@@ -1105,6 +1108,24 @@ $(srcdir)/build_gherkin_generate_pickles_vala.stamp: gherkin/GeneratePickles.val
 	$(AM_V_at)rm -f $@ && echo stamp > $@-t
 	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(build_gherkin_generate_pickles_VALAFLAGS) $(VALAFLAGS) -C gherkin/GeneratePickles.vala
 	$(AM_V_at)mv -f $@-t $@
+$(srcdir)/gherkin/GenerateTokens.c: $(srcdir)/build_gherkin_generate_tokens_vala.stamp
+	@if test -f $@; then :; else rm -f $(srcdir)/build_gherkin_generate_tokens_vala.stamp; fi
+	@if test -f $@; then :; else \
+	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/build_gherkin_generate_tokens_vala.stamp; \
+	fi
+$(srcdir)/build_gherkin_generate_tokens_vala.stamp: gherkin/GenerateTokens.vala
+	$(AM_V_at)rm -f $@ && echo stamp > $@-t
+	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(build_gherkin_generate_tokens_VALAFLAGS) $(VALAFLAGS) -C gherkin/GenerateTokens.vala
+	$(AM_V_at)mv -f $@-t $@
+$(srcdir)/gherkin/GenerateAst.c: $(srcdir)/build_gherkin_generate_ast_vala.stamp
+	@if test -f $@; then :; else rm -f $(srcdir)/build_gherkin_generate_ast_vala.stamp; fi
+	@if test -f $@; then :; else \
+	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/build_gherkin_generate_ast_vala.stamp; \
+	fi
+$(srcdir)/build_gherkin_generate_ast_vala.stamp: gherkin/GenerateAst.vala
+	$(AM_V_at)rm -f $@ && echo stamp > $@-t
+	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(build_gherkin_generate_ast_VALAFLAGS) $(VALAFLAGS) -C gherkin/GenerateAst.vala
+	$(AM_V_at)mv -f $@-t $@
 $(srcdir)/tests/gherkin/test-main.c: $(srcdir)/test_libgherkin3_vala.stamp
 	@if test -f $@; then :; else rm -f $(srcdir)/test_libgherkin3_vala.stamp; fi
 	@if test -f $@; then :; else \
@@ -1143,24 +1164,6 @@ $(srcdir)/tests/gherkin/pickles/CompilerTest.c: $(srcdir)/test_libgherkin3_vala.
 $(srcdir)/test_libgherkin3_vala.stamp: tests/gherkin/test-main.vala tests/gherkin/testcase.vala tests/gherkin/AstBuilderTest.vala tests/gherkin/GherkinDialectProviderTest.vala tests/gherkin/GherkinLineTest.vala tests/gherkin/ParserTest.vala tests/gherkin/pickles/CompilerTest.vala
 	$(AM_V_at)rm -f $@ && echo stamp > $@-t
 	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(test_libgherkin3_VALAFLAGS) $(VALAFLAGS) -C tests/gherkin/test-main.vala tests/gherkin/testcase.vala tests/gherkin/AstBuilderTest.vala tests/gherkin/GherkinDialectProviderTest.vala tests/gherkin/GherkinLineTest.vala tests/gherkin/ParserTest.vala tests/gherkin/pickles/CompilerTest.vala
-	$(AM_V_at)mv -f $@-t $@
-$(srcdir)/gherkin/GenerateAst.c: $(srcdir)/build_gherkin_generate_ast_vala.stamp
-	@if test -f $@; then :; else rm -f $(srcdir)/build_gherkin_generate_ast_vala.stamp; fi
-	@if test -f $@; then :; else \
-	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/build_gherkin_generate_ast_vala.stamp; \
-	fi
-$(srcdir)/build_gherkin_generate_ast_vala.stamp: gherkin/GenerateAst.vala
-	$(AM_V_at)rm -f $@ && echo stamp > $@-t
-	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(build_gherkin_generate_ast_VALAFLAGS) $(VALAFLAGS) -C gherkin/GenerateAst.vala
-	$(AM_V_at)mv -f $@-t $@
-$(srcdir)/gherkin/GenerateTokens.c: $(srcdir)/build_gherkin_generate_tokens_vala.stamp
-	@if test -f $@; then :; else rm -f $(srcdir)/build_gherkin_generate_tokens_vala.stamp; fi
-	@if test -f $@; then :; else \
-	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/build_gherkin_generate_tokens_vala.stamp; \
-	fi
-$(srcdir)/build_gherkin_generate_tokens_vala.stamp: gherkin/GenerateTokens.vala
-	$(AM_V_at)rm -f $@ && echo stamp > $@-t
-	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(build_gherkin_generate_tokens_VALAFLAGS) $(VALAFLAGS) -C gherkin/GenerateTokens.vala
 	$(AM_V_at)mv -f $@-t $@
 $(srcdir)/gherkin/GherkinLanguageConstants.c: $(srcdir)/libgherkin3_la_vala.stamp
 	@if test -f $@; then :; else rm -f $(srcdir)/libgherkin3_la_vala.stamp; fi
@@ -2001,6 +2004,8 @@ test-report perf-report full-report:	${TEST_PROGS}
 .PHONY: test test-report perf-report full-report
 # run make test as part of make check
 check-local: test
+
+-include $(top_srcdir)/git.mk
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

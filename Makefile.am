@@ -183,6 +183,9 @@ CLEANFILES = \
 	$(libgherkin3_la_SOURCES:.vala=.c) \
 	$(build_gherkin_generate_ast_SOURCES:.vala=.c) \
 	$(test_libgherkin3_SOURCES:.vala=.c) \
+	libgherkin3-0.1.vapi \
+	libgherkin3.h \
+	Gherkin3-1.0.gir \
 	*.stamp
 
 test: ${TEST_PROGS}
@@ -231,3 +234,5 @@ test-report perf-report full-report:	${TEST_PROGS}
 .PHONY: test test-report perf-report full-report
 # run make test as part of make check
 check-local: test
+
+-include $(top_srcdir)/git.mk
