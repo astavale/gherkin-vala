@@ -27,7 +27,7 @@ namespace Gherkin {
 					Json.Generator generator = new Json.Generator ();
 					generator.pretty = true;
 					generator.set_root (root);
-					message(generator.to_data(null));
+					stdout.puts(generator.to_data(null));
 				} catch (ParserException e) {
 					warning(e.message);
 					return 1;

@@ -1108,15 +1108,6 @@ $(srcdir)/build_gherkin_generate_pickles_vala.stamp: gherkin/GeneratePickles.val
 	$(AM_V_at)rm -f $@ && echo stamp > $@-t
 	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(build_gherkin_generate_pickles_VALAFLAGS) $(VALAFLAGS) -C gherkin/GeneratePickles.vala
 	$(AM_V_at)mv -f $@-t $@
-$(srcdir)/gherkin/GenerateTokens.c: $(srcdir)/build_gherkin_generate_tokens_vala.stamp
-	@if test -f $@; then :; else rm -f $(srcdir)/build_gherkin_generate_tokens_vala.stamp; fi
-	@if test -f $@; then :; else \
-	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/build_gherkin_generate_tokens_vala.stamp; \
-	fi
-$(srcdir)/build_gherkin_generate_tokens_vala.stamp: gherkin/GenerateTokens.vala
-	$(AM_V_at)rm -f $@ && echo stamp > $@-t
-	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(build_gherkin_generate_tokens_VALAFLAGS) $(VALAFLAGS) -C gherkin/GenerateTokens.vala
-	$(AM_V_at)mv -f $@-t $@
 $(srcdir)/gherkin/GenerateAst.c: $(srcdir)/build_gherkin_generate_ast_vala.stamp
 	@if test -f $@; then :; else rm -f $(srcdir)/build_gherkin_generate_ast_vala.stamp; fi
 	@if test -f $@; then :; else \
@@ -1125,6 +1116,15 @@ $(srcdir)/gherkin/GenerateAst.c: $(srcdir)/build_gherkin_generate_ast_vala.stamp
 $(srcdir)/build_gherkin_generate_ast_vala.stamp: gherkin/GenerateAst.vala
 	$(AM_V_at)rm -f $@ && echo stamp > $@-t
 	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(build_gherkin_generate_ast_VALAFLAGS) $(VALAFLAGS) -C gherkin/GenerateAst.vala
+	$(AM_V_at)mv -f $@-t $@
+$(srcdir)/gherkin/GenerateTokens.c: $(srcdir)/build_gherkin_generate_tokens_vala.stamp
+	@if test -f $@; then :; else rm -f $(srcdir)/build_gherkin_generate_tokens_vala.stamp; fi
+	@if test -f $@; then :; else \
+	  $(MAKE) $(AM_MAKEFLAGS) $(srcdir)/build_gherkin_generate_tokens_vala.stamp; \
+	fi
+$(srcdir)/build_gherkin_generate_tokens_vala.stamp: gherkin/GenerateTokens.vala
+	$(AM_V_at)rm -f $@ && echo stamp > $@-t
+	$(AM_V_VALAC)$(am__cd) $(srcdir) && $(VALAC) $(build_gherkin_generate_tokens_VALAFLAGS) $(VALAFLAGS) -C gherkin/GenerateTokens.vala
 	$(AM_V_at)mv -f $@-t $@
 $(srcdir)/tests/gherkin/test-main.c: $(srcdir)/test_libgherkin3_vala.stamp
 	@if test -f $@; then :; else rm -f $(srcdir)/test_libgherkin3_vala.stamp; fi

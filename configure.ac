@@ -2,7 +2,7 @@ AC_PREREQ(2.63)
 AC_INIT([libgherkin3],
         [0.1],
         [https://github.com/chebizarro/gherkin3/issues],
-        [dia3],
+        [libgherkin3],
         [https://github.com/chebizarro/gherkin3])
 
 AC_CONFIG_SRCDIR([Makefile.am])

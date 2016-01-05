@@ -33,7 +33,7 @@ namespace Gherkin {
 			Json.Node root = Json.gobject_serialize(pickles);
 			Json.Generator generator = new Json.Generator ();
 			generator.set_root (root);
-			message(generator.to_data(null));
+			stdout.puts(generator.to_data(null));
 			
 			return 0;
 		}
