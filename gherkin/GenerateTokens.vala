@@ -12,7 +12,7 @@ namespace Gherkin {
 				try {
 					FileInputStream input = file.read();
 					string result = parser.parse_reader(input, matcher);
-					message(result);
+					stdout.puts(result);
 				} catch (Error e) {
 					warning (e.message);
 				}
