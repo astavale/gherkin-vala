@@ -29,7 +29,7 @@ namespace Gherkin {
 			TimeVal time = TimeVal();
 			time.get_current_time();
 			long startTime = time.tv_usec;
-			File file = File.new_for_path("testdata/good/several_examples.feature");
+			File file = File.new_for_path("../tests/testdata/good/several_examples.feature");
 			try {
 				FileInputStream input = file.read();
 				Feature feature = parser.parse_reader(input, matcher);
