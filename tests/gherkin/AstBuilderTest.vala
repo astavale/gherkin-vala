@@ -8,7 +8,7 @@ namespace Gherkin {
 		public AstBuilderTest () {
 			base ("AstBuilderTest");
 			add_test ("is_reusable", is_reusable);
-			add_test ("build_ast", build_ast);
+			//add_test ("build_ast", build_ast);
 		}
 
 		public void is_reusable() {
