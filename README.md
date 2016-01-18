@@ -1,4 +1,4 @@
-| | |
+| Platform | Status |
 | --- | --- | 
 | Fedora 22 | [![Build Status](http://73.25.105.114:8000/buildStatus/icon?job=Gherkin for Vala (Fedora))](http://73.25.105.114:8000/job/Gherkin%20for%20Vala%20(Fedora)/) |
 | Ubuntu 15.04 | [![Build Status](http://73.25.105.114:8000/buildStatus/icon?job=Gherkin for Vala (Ubuntu))](http://73.25.105.114:8000/job/Gherkin%20for%20Vala%20(Ubuntu)/) |
