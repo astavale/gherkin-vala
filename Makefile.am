@@ -95,6 +95,9 @@ libgherkin3_la_VALAFLAGS = \
 
 libgherkin3_la_LIBADD = $(LIBGHERKIN3_LIBS)
 
+libgherkin3_la_LDFLAGS = $(LIBGHERKIN3_LDFLAGS) \
+	--no-undefined
+
 libgherkin3_la_includedir = $(includedir)/libgherkin3-0.1
 libgherkin3_la_include_HEADERS = libgherkin3.h
 
