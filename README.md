@@ -65,3 +65,9 @@ This will dump the abstract syntax tree as JSON:
   ]
 }
 ```
+
+## `libgherkin3` API and ABI
+`libgherkin3` was generated from the reference implementation, [gherkin](https://github.com/cucumber/gherkin), and follows that API. Work currently needs to be done on marking internal functions as `internal` in Vala and also developing a stable ABI. Anyone wanting to work on the API/ABI should read:
+
+ * [Libraries in Vala – ABI compatibility – part I](https://blog.piechotka.com.pl/2013/07/30/libraries-in-vala-abi-compatibility-part-i/)
+ * [Libraries in Vala – ABI compatibility – part II](https://blog.piechotka.com.pl/2013/12/20/libraries-in-vala-abi-compatibility-part-ii/)
