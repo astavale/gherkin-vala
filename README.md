@@ -71,3 +71,12 @@ This will dump the abstract syntax tree as JSON:
 
  * [Libraries in Vala – ABI compatibility – part I](https://blog.piechotka.com.pl/2013/07/30/libraries-in-vala-abi-compatibility-part-i/)
  * [Libraries in Vala – ABI compatibility – part II](https://blog.piechotka.com.pl/2013/12/20/libraries-in-vala-abi-compatibility-part-ii/)
+
+## GIR (GObject Introspection Repository) and Language Bindings
+`libgherkin3` is written in Vala and so easily generates a `GIR` file that can be used to generate a `.typelib` file to be read by `libgirrepository` and used with `libffi` for bindings to languages supporting GIR, for example Python, Javascript, Lua and Haskell.
+
+For anyone wishing to work on API/ABI stability for `libgherkin3` and so generate stable language bindings see:
+
+ * [ASCII art overview of GI's architecture](https://wiki.gnome.org/Projects/GObjectIntrospection/Architecture)
+ * [Implement a Gherkin parser in C #73](https://github.com/cucumber/gherkin/issues/73)
+ * [GObject Introspection](https://wiki.gnome.org/Projects/GObjectIntrospection)
