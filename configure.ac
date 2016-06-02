@@ -43,7 +43,7 @@ LT_INIT([disable-static])
 
 AC_PATH_PROG(GLIB_COMPILE_RESOURCES, glib-compile-resources)
 
-pkg_modules="glib-2.0 >= 2.42.0 gobject-2.0 json-glib-1.0 gee-0.8"
+pkg_modules="glib-2.0 gobject-2.0 json-glib-1.0 gee-0.8"
 AC_SUBST(pkg_modules)
 
 GHERKIN_DATA_DIR='$(datadir)/Gherkin'
@@ -53,6 +53,7 @@ AC_SUBST(GHERKIN_TEST_DIR)
 GHERKIN_SRC_DIR=[${PWD}/Gherkin]
 AC_SUBST(GHERKIN_SRC_DIR)
 
+PKG_CHECK_MODULES([GLib], [glib-2.0 >= 2.42.0])
 PKG_CHECK_MODULES([LIBGHERKIN3], [$pkg_modules])
 AC_SUBST(LIBGHERKIN3_CFLAGS)
 
