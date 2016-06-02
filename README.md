@@ -28,3 +28,40 @@ To run the test suite:
 ```
 make test
 ```
+
+## Getting Started
+`gherkin-vala` provides three command line tools to get started:
+ * `gherkin-generate-ast`
+ * `gherkin-generate-pickles`
+ * `gherkin-generate-tokens`
+
+A Gherkin `.feature` file, after any comments, should start with the `Feature` keyword in the human language specified for that file. The default language is English. Save this very basic example as `test.feature`:
+
+```
+Feature: A meaningless example
+```
+
+Then run `gherkin-generate-ast` with the file:
+
+```gherkin-generate-ast test.feature```
+
+This will dump the abstract syntax tree as JSON:
+
+```
+{
+  "node-type" : "Feature",
+  "location" : {
+    "line" : 1,
+    "column" : 1
+  },
+  "tags" : [
+  ],
+  "language" : "en",
+  "keyword" : "Feature",
+  "name" : "A meaningless example",
+  "scenarioDefinitions" : [
+  ],
+  "comments" : [
+  ]
+}
+```
